@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>바로DM/template List</title>
+    <style>
+        *{margin:0;padding:0}
+        body,html{
+            font-size:14px;
+            color:#666;
+            font-family:helvetica,'맑은고딕',sans-serif;
+        }
+        h1{
+            text-align: center;
+            color:#333;
+            padding:10px 0;
+            font-size:30px;
+        }
+        dl{ 
+            margin-bottom: 20px;
+            font-size:20px;
+            text-align: right;
+            padding:0 20px;
+        }
+        dt{
+            font-weight:700;
+        }
+        table{
+            border-collapse: collapse;
+            width:100%;
+        }
+        table thead th{
+            border-top:2px solid #2d2d2d
+        }
+        table th,table td{
+            padding:10px 0 ;
+            border-bottom:1px solid #ccc;
+            text-align: center;
+            border-right:1px solid #ccc;
+        }
+        table th:last-child, table td:last-child{
+            border-right:0;
+        }
+        table tbody tr{
+            cursor:pointer;
+        }
+        table tbody tr:hover{
+            background: #fafafa;
+        }
+        .ready{
+            color:#aaa;
+        }
+        .ing{
+            color:tomato
+        }
+        .completed{
+            color:green
+        }
+        .desc_box{
+            text-align-last: left;
+            padding-left:10px;
+        }
+        .log{
+            margin-bottom: 5px;
+            color:tomato;
+            text-align-last: left;            
+            padding-left:10px;
+        }
+        .log:before{
+            content:"*";
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">바로DM template list</h1>
+    <dl class="info">
+        <dt>작성자</dt>
+        <dd id="info">lee mijin / finenuts</dd>
+    </dl>
+    <table  id="templateList">
+        <thead>
+            <tr>
+                <th scope="col">menu</th>
+                <th scope="col">depth1</th>
+                <th scope="col">depth2</th>
+                <th scope="col">depth3</th>
+                <th scope="col">name</th>
+                <th scope="col">url</th>
+                <th scope="col">status</th>
+                <th scope="col">description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- codeSnippet -->
+            <tr>
+                <th scope="row" rowspan="3">UI Guide</th>
+                <td rowspan="3">codeSnippet</td>
+                <td>include</td>
+                <td></td>
+                <td class="name">include.html</td>
+                <td class="url">design/include.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">
+                        header/footer/layout
+                    </div>
+                    <p class="log">2018-09-07 생성</p>
+                    <p class="log">2018-10-18 top버튼 추가</p>
+                </td>
+            </tr>
+            <tr>
+                <td>style guide</td>
+                <td></td>
+                <td class="name">styleGuide.html</td>
+                <td class="url">design/styleGuide.html</td>
+                <td class="status">
+                    <span class="ing">매일 업데이트 중</span>
+                </td>
+                <td>
+                    <div class="desc_box">
+                        UI component style guide <br>
+                        formCtrl/Grid/Pagination/TextStyle/popup
+                    </div>                    
+                    <p class="log">2018-08-27 생성</p>
+                    <p class="log">2018-09-27 alert 추가</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Error</td>
+                <td></td>
+                <td class="name">errorTemplate.html</td>
+                <td class="url">design/errorTemplate.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">
+                        에러 화면 code + text
+                    </div>                    
+                    <p class="log">2018-10-19 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">main</th>
+                <td>main</td>
+                <td></td>
+                <td></td>
+                <td class="name">main.html</td>
+                <td class="url">design/main.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">
+                        main에만 container있음
+                    </div>                    
+                    <p class="log">2018-09-07 생성</p>
+                    <p class="log">2018-09-11 main slide 배너추가</p>
+                    <p class="log">2018-09-12 title text 문구 변경</p>
+                </td>
+            </tr>
+            <!-- 맞춤 홍보-->
+            <tr>
+                <th scope="row" rowspan="40">GNB</th>
+                <td rowspan="8">맞춤홍보DM</td>
+                <td rowspan="5">맞춤홍보DM 주문하기</td>
+                <td>주문 입력process</td>
+                <td class="name">customDmOrder.html</td>
+                <td class="url">design/customDmOrder.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-10 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>지도 선택</td>
+                <td class="name">mapDM.html</td>
+                <td class="url">design/mapDM.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">window.open으로 창 생성</div>
+                    <p class="log">2018-10-04 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>주소록 불러오기</td>
+                <td class="name">myAddressList.html</td>
+                <td class="url">design/myAddressList.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-08 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>업종 상세분류</td>
+                <td class="name">businessDetailCategory.html</td>
+                <td class="url">design/businessDetailCategory.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-08 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>업종키워드 검색</td>
+                <td class="name">businessKeywordSrch.html</td>
+                <td class="url">design/businessKeywordSrch.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-08 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>맞춤홍보DM이란?</td>
+                <td></td>
+                <td class="name">customDMis.html</td>
+                <td class="url">design/customDMis.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>                    
+                    <p class="log">2018-10-10 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>맞춤홍보DM 주문방법</td>
+                <td></td>
+                <td class="name">customDMOrderGuide.html</td>
+                <td class="url">design/customDMOrderGuide.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-10 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>요금계산기</td>
+                <td></td>
+                <td class="name">customDMCalc.html</td>
+                <td class="url">design/customDMCalc.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-10 생성</p>
+                </td>
+            </tr>
+            <!-- 일반 -->
+            <tr>
+                <td rowspan="7">일반DM</td>
+                <td rowspan="4">일반DM 주문하기</td>
+                <td>주문내역입력</td>
+                <td class="name">basicDmOrder.html</td>
+                <td class="url">design/basicDmOrder.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-09-28 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>전단지파일 업로드</td>
+                <td class="name">leafletFileUpload.html</td>
+                <td class="url">design/leafletFileUpload.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-01 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>디자인템플릿 찾기</td>
+                <td class="name">findDesignTemplate.html</td>
+                <td class="url">design/findDesignTemplate.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-01 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>결제완료</td>
+                <td class="name">basicDmOrderResult.html</td>
+                <td class="url">design/basicDmOrderResult.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-09-18 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>일반DM이란?</td>
+                <td></td>
+                <td class="name">basicDMis.html</td>
+                <td class="url">design/basicDMis.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-18 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>일반DM 주문방법</td>
+                <td></td>
+                <td class="name">basicDMOrderGuide.html</td>
+                <td class="url">design/basicDMOrderGuide.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-17 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>요금계산기</td>
+                <td></td>
+                <td class="name">basicDMCalc.html</td>
+                <td class="url">design/basicDMCalc.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-17 생성</p>
+                </td>
+            </tr>
+            <!-- 디자인 template -->
+            <tr>
+                <td rowspan="2">디자인template</td>
+                <td>전단지 디자인</td>
+                <td></td>
+                <td class="name">leafletDesign.html</td>
+                <td class="url">design/leafletDesign.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-12 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>봉투 디자인</td>
+                <td></td>
+                <td class="name">envelopeDesign.html</td>
+                <td class="url">design/envelopeDesign.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-10-12 생성</p>
+                </td>
+            </tr>
+            <!-- 서비스 안내 -->
+            <tr>
+                <td rowspan="3">서비스 안내</td>
+                <td>바로DM 서비스 종류</td>
+                <td></td>
+                <td class="name">serviceTypeInfo.html</td>
+                <td class="url">design/serviceTypeInfo.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">
+                    </div>                    
+                    <p class="log">2018-09-13 생성</p>
+                    <p class="log">2018-09-21 이미지캡션괄호내용삭제 및 이미지파일교체</p>
+                </td>
+            </tr>
+            <tr>
+                <td>맞춤 DM 토탈 서비스</td>
+                <td>일반/맞춤</td>
+                <td class="name">serviceFeeInfo.html</td>
+                <td class="url">design/serviceFeeInfo.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-13 생성</p>
+                    <div class="desc_box">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>오프라인 주문 방법</td>
+                <td></td>
+                <td class="name">offlineOrderInfo.html</td>
+                <td class="url">design/offlineOrderInfo.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>                    
+                    <div class="desc_box">
+                        오프라인 설문 시 옵션값 확인필요
+                    </div>
+                    <p class="log">2018-09-13 생성</p>
+                    <p class="log">2018-09-21 4번항목 라디오 -> 체크로 변경</p>
+                </td>
+            </tr>
+            <!-- 고객센터 -->
+            <tr>
+                <td rowspan="9">고객센터</td>
+                <td>자주 묻는 질문</td>
+                <td></td>
+                <td class="name">faq.html</td>
+                <td class="url">design/faq.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>                    
+                    <div class="desc_box">추후 JSON 갱신필요</div>
+                    <p class="log">2018-08-31 생성</p>
+                    <p class="log">2018-09-17 JSON 1차 수정 및 faq code수정</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="4">1:1 문의</td>
+                <td></td>
+                <td class="name">qnaList.html</td>
+                <td class="url">design/qnaList.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-08-30 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="name">qnaWrite.html</td>
+                <td class="url">design/qnaWrite.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-08-30 생성</p>
+                    <p class="log">2018-09-03 수정 : 첨부파일 유도 화면 및 파일 리스트,파일 업로드 게이지 추가</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="name">qnaAnswer.html</td>
+                <td class="url">design/qnaAnswer.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-08-30 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="name">qnaView.html</td>
+                <td class="url">design/qnaView.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-08-30 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="3">공지사항</td>
+                <td></td>
+                <td class="name">noticeList.html</td>
+                <td class="url">design/noticeList.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-08-30 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="name">noticeWrite.html</td>
+                <td class="url">design/noticeWrite.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-08-30 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="name">noticeView.html</td>
+                <td class="url">design/noticeView.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-08-30 생성</p>    
+                </td>
+            </tr>
+            <tr>
+                <td>이용안내</td>
+                <td></td>
+                <td class="name">site_terms.html</td>
+                <td class="url">design/site_terms.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box"></div>
+                    <p class="log">2018-08-31 생성</p>
+                    <p class="log">2018-10-16 약관 및 개인정보처리방침 내용추가</p>
+                </td>
+            </tr>
+            <!-- 회사소개 -->
+            <tr>
+                <td rowspan="3">회사소개</td>
+                <td>빌포스트 소개</td>
+                <td></td>
+                <td class="name">introduce.html</td>
+                <td class="url">design/introduce.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-20 생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>주요 서비스</td>
+                <td></td>
+                <td class="name">mainBusiness.html</td>
+                <td class="url">design/mainBusiness.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-20 생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>연혁</td>
+                <td></td>
+                <td class="name">history.html</td>
+                <td class="url">design/history.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-20 생성</div>
+                </td>
+            </tr>
+            <!-- my바로 DM -->
+            <tr>
+                <td rowspan="8">my 바로 DM</td>
+                <td rowspan="3">주문/발송 현황</td>
+                <td></td>
+                <td class="name">orderMainList.html</td>
+                <td class="url">design/orderMainList.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-10 생성</p>
+                </td>
+            </tr>
+            <tr>
+                <td>주문내역 상세</td>
+                <td class="name">orderView.html</td>
+                <td class="url">design/orderView.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log"> 2018-09-10 생성</p>
+                    <p class="log">2018-09-12 일부 구조 수정</p>
+                </td>
+            </tr>
+            <tr>
+                <td>시안확인</td>
+                <td class="name">designView.html</td>
+                <td class="url">design/designView.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-11 생성</p>
+                    <p class="log">2018-09-27 내용및 디자인레이아웃 변경</p>
+                </td>
+            </tr>
+            <tr>
+                <td>저장된 주소록</td>
+                <td></td>
+                <td class="name">savedAddressList.html</td>
+                <td class="url">design/savedAddressList.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-11 생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>신청 중인 주문</td>
+                <td></td>
+                <td class="name">requestOrderList.html</td>
+                <td class="url">design/requestOrderList.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-11 생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>발신정보 저장</td>
+                <td></td>
+                <td class="name">sendInfoSave.html</td>
+                <td class="url">design/sendInfoSave.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-12 생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">내정보 수정</td>
+                <td>개인</td>
+                <td class="name">myInfoEditIndi.html</td>
+                <td class="url">design/myInfoEditIndi.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-12 생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>기업</td>
+                <td class="name">myInfoEditEnter.html</td>
+                <td class="url">design/myInfoEditEnter.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-12 생성</div>
+                </td>
+            </tr>
+            <!-- 로그인 -->
+            <tr>
+                <th scope="row" rowspan="11">membership</th>
+                <td rowspan="5">login</td>
+                <td>로그인</td>
+                <td></td>
+                <td class="name">login.html</td>
+                <td class="url">design/login.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-04생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">아이디 찾기</td>
+                <td></td>
+                <td class="name">myIdFind.html</td>
+                <td class="url">design/myIdFind.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-04생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>결과</td>
+                <td class="name">myIdFindResult.html</td>
+                <td class="url">design/myIdFindResult.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-04생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">비밀번호 찾기</td>
+                <td></td>
+                <td class="name">myPswdFind.html</td>
+                <td class="url">design/myPswdFind.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-04생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>결과</td>
+                <td class="name">myPswdFindResult.html</td>
+                <td class="url">design/myPswdFindResult.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-04생성</div>
+                </td>
+            </tr>
+            <!-- 회원가입 -->
+            <tr>
+                <td rowspan="6">회원가입</td>
+                <td>본인인증</td>
+                <td>개인/기업</td>
+                <td class="name">joinStep1.html</td>
+                <td class="url">design/joinStep1.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-04생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>약관동의</td>
+                <td></td>
+                <td class="name">joinStep2.html</td>
+                <td class="url">design/joinStep2.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-05생성</p>
+                    <p class="log">2018-10-16 약관 내용추가</p>
+                    <div class="desc_box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">정보입력</td>
+                <td>개인</td>
+                <td class="name">joinStep3Indi.html</td>
+                <td class="url">design/joinStep3Indi.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-05생성</p>
+                    <p class="log">2018-09-12 오타수정</p>
+                </td>
+            </tr>
+            <tr>            
+                <td>기업</td>
+                <td class="name">joinStep3Enter.html</td>
+                <td class="url">design/joinStep3Enter.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <p class="log">2018-09-05생성</p>
+                    <p class="log">2018-09-12 오타수정</p>
+                </td>
+            </tr>
+            <tr>
+                <td>가입완료</td>
+                <td></td>
+                <td class="name">joinStep4.html</td>
+                <td class="url">design/joinStep4.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-05생성</div>
+                </td>
+            </tr>
+            <tr>
+                <td>기업회원메일인증폼</td>
+                <td></td>
+                <td class="name">mailJoinCertify.html</td>
+                <td class="url">design/mailJoinCertify.html</td>
+                <td class="status">
+                    <span class="completed">완료</span>
+                </td>
+                <td>
+                    <div class="desc_box">2018-09-05생성</div>
+                </td>
+            </tr>            
+            
+        </tbody>        
+    </table>
+    <script>
+        var table = document.getElementById('templateList');
+        var tr = table.getElementsByTagName('tr');
+
+        for(var i = 0; i < tr.length; i++){
+            tr[i].onclick = function(){
+                var _url = this.querySelector('.url').textContent;
+                window.open(_url,"_blank");
+            }
+        }
+    </script>
+</body>
+</html>

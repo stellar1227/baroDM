@@ -1,0 +1,172 @@
+//mixin
+@mixin fontFace($filename, $weight){
+    @font-face {
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: $weight;
+        src: local($filename), local($filename), local($filename);
+        src: url(/fonts/#{$filename}.eot);
+        src: url(/fonts/#{$filename}.eot?#iefix) format('embedded-opentype'),
+        url(/fonts/#{$filename}.woff) format('woff'),
+        url(/fonts/#{$filename}.otf) format('truetype');
+    }
+}
+
+@mixin bodyFont(){        
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    color: $base-font-color;
+    font-weight: $normal;    
+}
+
+@mixin appearance(){
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+@mixin boxSizing(){
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+}
+
+@mixin clearFix(){
+    &:after{
+        content:"";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin textFieldStyle(){
+    @include boxSizing();
+    @include bodyFont();
+    padding:0 20px;
+    height:40px;
+    line-height:40px;
+    background:#fff;
+    border:1px solid $base-border-color;
+    color:$base-font-color;
+    &[readonly]{
+        color :$sub-font-color;
+    }
+    &[disabled]{
+        color :$sub-font-color;
+        background:#f2f2f2;
+    }
+    &[data-valid="error"]{
+        @extend %icon_sprite_right;
+        background-position: 100% 0;
+        padding-right:40px;
+    }
+    &::-webkit-input-placeholder{
+        color:#ccc
+    }
+    
+    &::-ms-input-placeholder{
+        color:#ccc;
+    }
+    
+    &::-moz-input-placeholder{
+        color:#ccc;
+    }
+}
+
+@mixin inputSetGenerator($type){
+    display:inline;
+    vertical-align: middle;
+    overflow: hidden;
+    label{
+        display: inline-block;
+        vertical-align: top;
+        cursor:pointer;
+        font-size:0;
+        &:before{
+            content:"";
+            display: inline-block;
+            vertical-align: bottom;
+            width:20px;
+            height:20px;
+            @extend %icon_sprite;
+        }
+    }    
+    .text{
+        font-size:1rem;
+        margin-left:10px;
+        vertical-align: middle;
+    }
+    input{
+        position: absolute;
+        left:-9999px;
+    }
+
+    input[readonly] + label{
+        cursor:auto;
+    }
+    input[disabled] + label{
+        cursor:auto;            
+    }
+
+    @if $type == radio {
+        label:before{
+            background-position: -100px -10px;
+        }
+        input:checked{
+            & + label:before{
+                background-position: -10px -10px;
+            }
+            &[disabled] + label:before{
+                background-position: -70px -10px;
+            }            
+            &[readonly] + label:before{
+                background-position: -40px -10px;
+            }
+        }
+    } @else if  $type == checkbox {
+        label:before{
+            background-position: -100px -40px;
+        }
+        input:checked{
+            & + label:before{
+                background-position: -10px -40px;
+            }
+            &[disabled] + label:before{
+                background-position: -70px -40px;
+            }            
+            &[readonly] + label:before{
+                background-position: -40px -40px;
+            }
+        }
+    }
+}
+
+
+
+//extend
+/*icon단위로 쓸때만 (단순 컨텐츠 배경nono)*/
+%icon_sprite{ 
+    background-image: url(/images/common/icon_sprite.png);
+    background-repeat: no-repeat;    
+    text-indent:-9999px;
+    overflow:hidden;
+}
+
+%icon_sprite_right{
+    background-image: url(/images/common/icon_sprite_right.png);
+    background-repeat: no-repeat;
+}
+
+%bg_sprite{
+    background-image: url(/images/common/bg_sprite.png);
+    background-repeat: no-repeat;
+}
+
+%ellipsis{
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+//function

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>공지사항 게시판 | 바로 DM</title>
+</head>
+<body>
+    <div class="sub_visual" data-category="customer">
+        CUSTOMER
+    </div>
+    <section class="content">
+        <div class="info_title">
+            <h2 class="tit">공지사항</h2>
+            <p class="desc">바로DM의 새롭고 다양한 소식을 담았습니다. 공지사항을 통해 다양한 소식을 확인해보세요.</p>
+        </div>
+        <div class="list_table">
+            <table id="noticeList">
+                <caption>공지사항 게시판</caption>
+                <colgroup>
+                    <col style="width:6.9%" />
+                    <col style="width:auto;" />
+                    <col style="width:13.5%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">NO</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">등록일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span id="num"></span>
+                        </td>
+                        <td data-align="left">
+                            <span id="title" class="title"></span>
+                        </td>
+                        <td>
+                            <span id="date"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn_list" data-align="right">
+            <button type="button" class="out_field_btn" id="btnNotice">작성</button>
+        </div>
+        <div id="pagination">
+            <ul>
+                <li><a href="#" title="첫페이지">first</a></li> 
+                <li><a href="#" title="이전">prev</a></li>
+            </ul>
+            <ul>
+                <li><a href="#"><span>1</span></a></li>
+            </ul>
+            <ul>
+                <li><a href="#" title="다음페이지">next</a></li>
+                <li><a href="#" title="마지막페이지">last</a></li>
+            </ul>
+        </div>
+    </section>
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <script>
+        var data = [{
+            "num" : "10",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        }, {
+            "num" : "",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        }, {
+            "num" : "9",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11",
+        },{
+            "num" : "8",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        },{
+            "num" : "",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        },{
+            "num" : "6",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        },{
+            "num" : "5",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        },{
+            "num" : "4",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        },{
+            "num" : "3",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        },{
+            "num" : "2",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        },{
+            "num" : "1",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11"
+        }]
+    
+        
+    N(data).grid({
+        context : "#noticeList",
+        rowHandler : function(index, row, data) {
+
+            row.click(function(){ //현재는 단순히 여는 상태
+                N().popup({
+                    url : 'noticeView.html',
+                    title : '공지사항',
+                    message : {
+                        "ko_KR" : {
+                            "confirm" : "닫기"
+                        }
+                    },
+                    "confirm" : false,
+                    closeMode : "remove"
+
+                }).open()
+            })
+
+        }
+    }).bind();
+
+    N().pagination({
+        context: "#pagination",
+        countPerPage : '10',
+        totalCount : '100',
+        pageNo : '3'
+    }).bind();
+
+    $("#btnNotice").click(function(){
+        N().popup({
+            url : 'noticeWrite.html',
+            title : '공지사항 작성',
+            message : {
+                "ko_KR" : {
+                    "confirm" : "저장",
+                    "cancel" : "취소"
+                }
+            }
+        }).open();
+    })
+    
+    
+    </script>
+</body>
+</html>

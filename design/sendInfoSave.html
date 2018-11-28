@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>발신정보 저장 | 바로 DM</title>
+</head>
+<body>
+    <div class="sub_visual" data-category="my">
+        ORDERING DELEVERY
+    </div>
+    <section class="content">
+        <div class="info_title">
+            <h2 class="tit">발신정보 저장</h2>
+            <p class="desc">DM발송 시 봉투에 표기되는 발신정보입니다.</p>
+        </div>
+        <div class="data_table">
+            <table>
+                <caption>발신정보 내역입력</caption>
+                <colgroup>
+                    <col style="width:220px;" />
+                    <col style="width:auto" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            발신자명
+                            <span class="important" title="필수입력">*</span>
+                        </th>
+                        <td>
+                            <input type="text" title="발신자 이름" data-width="w260px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            주소
+                            <span class="important" title="필수입력">*</span>
+                        </th>
+                        <td>
+                            <div class="address_set">
+                                <input type="number" title="우편번호" readonly class="post" />
+                                <button type="button" class="field_btn btn_post" data-color="gray">주소찾기</button>
+                                <input type="text" title="주소" class="address" readonly />
+                                <input type="text" class="detail_address" title="상세주소" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            전화번호
+                            <span class="important" title="필수입력">*</span>
+                        </th>
+                        <td>
+                            <div class="tel_set">
+                                <input type="number" title="연락처" data-width="w120px">
+                                <span class="bar">-</span>
+                                <input type="number" title="두번째자리" data-width="w120px">
+                                <span class="bar">-</span>
+                                <input type="number" title="세번째자리" data-width="w120px">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            봉투표기 문구
+                        </th>
+                        <td>
+                            <input type="text" title="봉투표기문구" data-width="w260px" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <ul class="table_notice">
+            <li class="star_noti" data-color="important">발신정보를 저장하시면 주문 시에 자동으로 발신정보로 적용됩니다.</li>
+        </ul>
+        <div class="btn_list" data-align="center">
+            <button type="submit" class="out_field_btn">저장</button>
+        </div>
+    </section>
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    
+</body>
+</html>

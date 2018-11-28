@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">    
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <title>1:1문의 답변 | 바로 DM</title>
+</head>
+<body>
+    <!-- 이 컨테이너 이하로 parsing  됩니다 popup page 작성시 필수 natural.js ui쪽에 수정되어있음-->
+    <div class="popup_layout">
+        <div class="inner_popup">            
+            <div class="data_table">
+                <table id="qnaAnswer">
+                    <caption>문의 답변</caption>
+                    <colgroup>
+                        <col style="width:170px" />
+                        <col style="width:auto" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">문의유형</th>
+                            <td>
+                                <span class="data" id="qnaAtit"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">작성자</th>
+                            <td>
+                                <span class="data" id="qnaAuser"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">제목</th>
+                            <td>
+                                <input type="text" data-width="w100per" placeholder="25자 이내" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">내용</th>
+                            <td>
+                                <textarea name="" id="" cols="30" rows="10" placeholder="500자 이내 작성"></textarea><!-- 에디터로 사용시 높이값 160px 입니다. -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">첨부</th>
+                            <td>
+                                <div class="input_file_set">
+                                    <input type="text" readonly />
+                                    <input type="file" id="file_add" />
+                                    <label for="file_add">파일첨부하기</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        var data = {
+            "qnaAtit" : "문의제목 표시",
+            "qnaAuser" : "홍길동"
+        }
+        $(function(){
+            N(data).grid('#qnaAnswer').bind();
+        })
+        
+        $(".input_file_set").length && input_file_set.init();
+    </script>
+</body>
+</html>

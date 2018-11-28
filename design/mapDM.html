@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css"> 
+    <title>맟춤DM 발송대상 지도선택 | 바로 DM</title>
+</head>
+<body>
+    <div class="map_sec">
+        <div class="map_condition_sec">
+            <ul class="category_tab" id="categoryTab">
+                <li><a href="#address">주소로 선택</a></li>
+                <li class="on"><a href="#business">업종으로 선택</a></li>
+            </ul>
+            <button type="button" class="field_btn btn_choice_myList" id="btnChoiceMyList">My 주소록</button>
+            <div class="condition_box">
+                <div class="business_condition">
+                    <strong>업종 키워드 검색</strong>
+                    <div class="simple_srch_sec">
+                        <input type="text" title="키워드 입력">
+                        <button type="button" class="btn_srch btn_b_keyword">검색</button>
+                    </div>
+                    <button type="button" class="field_btn btn_b_detail">업종상세분류 검색열기</button>
+                    <div class="b_result_sec">                        
+                        <button class="field_btn btn_b_result">업종 선택 결과 (5)</button>
+                        <div class="b_result_layer"><!-- 업종 선택 결과-->
+                            <strong class="title_text" data-level="3">선택업종</strong>
+                            <button type="button" class="mini_field_btn">선택삭제</button>
+                            <div class="list_box">
+                                <ul>
+                                    <li>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="id1234"   /><!-- id와 label for 연결-->
+                                            <label for="id1234">
+                                                <span class="text">소매 (340)</span>
+                                            </label>   
+                                        </div>
+                                        <button type="button" class="btn_del_list">삭제</button>
+                                    </li>
+                                    <li>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="id1235"   /><!-- id와 label for 연결-->
+                                            <label for="id1235">
+                                                <span class="text">부동산 &gt; 부동산중개 (40)</span>
+                                            </label>   
+                                        </div>
+                                        <button type="button" class="btn_del_list">삭제</button>
+                                    </li>
+                                    <li>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="id1236"   /><!-- id와 label for 연결-->
+                                            <label for="id1236">
+                                                <span class="text">소매 &gt; 취미/오락관련소매 &gt; 우표/공중전화카드수집상 (40)</span>
+                                            </label>   
+                                        </div>
+                                        <button type="button" class="btn_del_list">삭제</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- //업종 선택 결과-->
+                    </div>
+                </div>
+                <div class="tab" id="subAddTab">
+                    <ul>
+                        <li><a href="#sTab1">법정동설정</a></li>
+                        <li><a href="#sTab2">지도에서 직접 선택</a></li>
+                        <li><a href="#sTab3">배달국 지정</a></li>
+                    </ul>
+                    <div id="sTab1">
+                        <div class="select_condition">
+                            <strong>주소 설정</strong>
+                            <select name="" id="">
+                                <option value="">시도</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">구군</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">읍/면/동</option>
+                            </select>
+                            <button type="button" class="field_btn" data-type="post_num">검색</button>
+                        </div>
+                    </div>
+                    <div id="sTab2">
+                        <div class="select_condition">
+                            <strong>영역 설정</strong>
+                            <div class="btn_draw" data-type="circle">
+                                <input type="radio" id="circle" name="figure" />
+                                <label for="circle">원형으로 선택</label>
+                            </div>
+                            <div class="btn_draw" data-type="square">
+                                <input type="radio" id="square" name="figure" />
+                                <label for="square">사각형으로 선택</label>
+                            </div>
+                            <div class="btn_draw" data-type="polygon">
+                                <input type="radio" id="polygon" name="figure" />
+                                <label for="polygon">다각형으로 선택</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sTab3">
+                        <div class="select_condition">
+                            <strong>배달국 설정</strong>
+                            <select name="" id="">
+                                <option value="">시도</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">배달국 선택</option>
+                            </select>
+                            <button type="button" class="field_btn" data-type="post_num">검색</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="specific_choice"  id="addSpecSettings"><!--  상세 조건 설정 -->                        
+                    <ul class="selected_specific"><!-- 선택된 조건 상단에 표시 -->
+                        <li>
+                            <a href="#">주거 : 전체</a>
+                            <div class="specific_result">
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="all_type_result" disabled readonly checked  /><!-- 순서 중요함, readonly는 원래 없는 스펙임 -->
+                                    <label for="all_type_result">
+                                        <span class="text">전체</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="type_result_level1" disabled  />
+                                    <label for="type_result_level1">
+                                        <span class="text">아파트</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="type_result_level2"  disabled />
+                                    <label for="type_result_level2">
+                                        <span class="text">오피스텔</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="type_result_level3"  disabled />
+                                    <label for="type_result_level3">
+                                        <span class="text">연립주택</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="type_result_level4"  disabled />
+                                    <label for="type_result_level4">
+                                        <span class="text">다세대주택</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="type_result_level5"  disabled />
+                                    <label for="type_result_level5">
+                                        <span class="text">공공주택</span>
+                                    </label>   
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">평형 : 전체</a>
+                            <div class="specific_result">
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="all_size_result" disabled readonly checked />
+                                    <label for="all_size_result">
+                                        <span class="text">전체</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="size_result_level1" disabled  />
+                                    <label for="size_result_level1">
+                                        <span class="text">0~66m2</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="size_result_level2" disabled />
+                                    <label for="size_result_level2">
+                                        <span class="text">67~99m2</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="size_result_level3" disabled />
+                                    <label for="size_result_level3">
+                                        <span class="text">100~132m2</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="size_result_level4"  disabled />
+                                    <label for="size_result_level4">
+                                        <span class="text">330~991m2</span>
+                                    </label>   
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">세대수 : 선택</a>
+                            <div class="specific_result">
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="all_household_result" disabled />
+                                    <label for="all_household_result">
+                                        <span class="text">전체</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="household_result_level1" disabled  />
+                                    <label for="household_result_level1">
+                                        <span class="text">1000세대 이상</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="household_result_level2" disabled readonly checked  />
+                                    <label for="household_result_level2">
+                                        <span class="text">1500세대 이상</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="household_result_level3" disabled />
+                                    <label for="household_result_level3">
+                                        <span class="text">2000세대 이상</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="household_result_level4" disabled />
+                                    <label for="household_result_level4">
+                                        <span class="text">2500세대 이상</span>
+                                    </label>   
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">성별 : 선택</a>
+                            <div class="specific_result">
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="all_gender_result" disabled  />
+                                    <label for="all_gender_result">
+                                        <span class="text">전체</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="gender_result_male" disabled  />
+                                    <label for="gender_result_male">
+                                        <span class="text">남자</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="gender_result_female" disabled readonly checked />
+                                    <label for="gender_result_female">
+                                        <span class="text">여자</span>
+                                    </label>   
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">연령 : 선택</a>
+                            <div class="specific_result">
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="all_age_result" disabled />
+                                    <label for="all_age_result">
+                                        <span class="text">전체</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="age_result_level1" disabled />
+                                    <label for="age_result_level1">
+                                        <span class="text">0~9세</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="age_result_level2" disabled readonly checked />
+                                    <label for="age_result_level2">
+                                        <span class="text">10~19세</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="age_result_level3" disabled readonly checked />
+                                    <label for="age_result_level3">
+                                        <span class="text">20~29세</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="age_result_level4" disabled />
+                                    <label for="age_result_level4">
+                                        <span class="text">30~39세</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="age_result_level5" disabled />
+                                    <label for="age_result_level5">
+                                        <span class="text">40~49세</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="age_result_level6" disabled />
+                                    <label for="age_result_level6">
+                                        <span class="text">50~59세</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="age_result_level7" disabled  />
+                                    <label for="age_result_level7">
+                                        <span class="text">60~69세</span>
+                                    </label>   
+                                </div>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="age_result_level8" disabled />
+                                    <label for="age_result_level8">
+                                        <span class="text">70세 이상</span>
+                                    </label>   
+                                </div>
+                            </div>
+                        </li>
+                    </ul><!-- //선택된 조건 표시 -->
+                    <button type="button" class="btn_toggle_specific">상세조건 설정 (주거형태 / 건평 / 세대수 / 성별 / 연령)</button>
+                    <div class="specific_sec"><!-- 상세조건 설정 -->
+                        <table>
+                            <caption>상세조건 설정</caption>
+                            <colgroup>
+                                <col style="width:130px" />
+                                <col style="width:auto" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">주거형태</th>
+                                    <td>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="all_type"  />
+                                            <label for="all_type">
+                                                <span class="text">전체</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="type_level1"  />
+                                            <label for="type_level1">
+                                                <span class="text">아파트</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="type_level2"  />
+                                            <label for="type_level2">
+                                                <span class="text">오피스텔</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="type_level3"  />
+                                            <label for="type_level3">
+                                                <span class="text">연립주택</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="type_level4"  />
+                                            <label for="type_level4">
+                                                <span class="text">다세대주택</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="type_level5"  />
+                                            <label for="type_level5">
+                                                <span class="text">공공주택</span>
+                                            </label>   
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">건평</th>
+                                    <td>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="all_size"  />
+                                            <label for="all_size">
+                                                <span class="text">전체</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="size_level1"  />
+                                            <label for="size_level1">
+                                                <span class="text">0~66m2</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="size_level2"  />
+                                            <label for="size_level2">
+                                                <span class="text">67~99m2</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="size_level3"  />
+                                            <label for="size_level3">
+                                                <span class="text">100~132m2</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="size_level4"  />
+                                            <label for="size_level4">
+                                                <span class="text">330~991m2</span>
+                                            </label>   
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">세대수</th>
+                                    <td>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="all_household"  />
+                                            <label for="all_household">
+                                                <span class="text">전체</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="household_level1"  />
+                                            <label for="household_level1">
+                                                <span class="text">1000세대 이상</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="household_level2"  />
+                                            <label for="household_level2">
+                                                <span class="text">1500세대 이상</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="household_level3"  />
+                                            <label for="household_level3">
+                                                <span class="text">2000세대 이상</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="household_level4"  />
+                                            <label for="household_level4">
+                                                <span class="text">2500세대 이상</span>
+                                            </label>   
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">성별</th>
+                                    <td>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="all_gender"  />
+                                            <label for="all_gender">
+                                                <span class="text">전체</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="gender_male"  />
+                                            <label for="gender_male">
+                                                <span class="text">남자</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="gender_female"  />
+                                            <label for="gender_female">
+                                                <span class="text">여자</span>
+                                            </label>   
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">연령</th>
+                                    <td>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="all_age"  />
+                                            <label for="all_age">
+                                                <span class="text">전체</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="age_level1"  />
+                                            <label for="age_level1">
+                                                <span class="text">0~9세</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="age_level2"  />
+                                            <label for="age_level2">
+                                                <span class="text">10~19세</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="age_level3"  />
+                                            <label for="age_level3">
+                                                <span class="text">20~29세</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="age_level4"  />
+                                            <label for="age_level4">
+                                                <span class="text">30~39세</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="age_level5"  />
+                                            <label for="age_level5">
+                                                <span class="text">40~49세</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="age_level6"  />
+                                            <label for="age_level6">
+                                                <span class="text">50~59세</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="age_level7"  />
+                                            <label for="age_level7">
+                                                <span class="text">60~69세</span>
+                                            </label>   
+                                        </div>
+                                        <div class="input_set" data-type="checkbox">    
+                                            <input type="checkbox" id="age_level8"  />
+                                            <label for="age_level8">
+                                                <span class="text">70세 이상</span>
+                                            </label>   
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btn_list" data-align="center">                            
+                            <button type="submit" class="field_btn btn_send_specific" data-color="light_gray">설정완료</button>
+                        </div>
+                    </div><!-- //상세조건 설정 -->
+                </div>
+            </div>
+        </div>
+        <div class="target_sec">
+            <button type="button" class="btn_detail_address">발송대상 상세주소 선택 및 목록열기</button>
+            <div class="srch_detail_address">
+                <div class="target_box" data-list="detail">
+                    <strong class="title_text" data-level="3">검색된 주소</strong>
+                    <div class="sel_address">
+                        <select name="" id="" data-width="w100per">
+                            <option value="">전체</option>
+                        </select>
+                        <ul class="sel_list">
+                            <li>
+                                <div class="input_set" data-type="checkbox">  
+                                    <input type="checkbox" id="sel1"  /><!-- id / label연결-->
+                                    <label for="sel1">
+                                        <span class="text">
+                                            개포현대아파트 <span class="num">(18)</span>
+                                        </span>
+                                    </label>   
+                                </div>
+                                <input type="text" title="배송 가구수" value="18" /><!-- value 초깃값은 max -->
+                            </li>
+                        </ul>
+                        <p class="star_noti">건물별로 배송 가구수를 변경할 수 있습니다. <br>(랜덤발송)</p>
+                        <div class="btn_list" data-align="center">
+                            <button type="button" class="field_btn btn_send_detail" data-type="ad_add">발송대상으로 주소추가</button>
+                        </div>
+                    </div>
+                    <button type="button" class="mini_field_btn">전체삭제</button>
+                </div>
+            </div>
+            <div class="send_target_list">
+
+                <div class="target_box" data-list="office">
+                    <strong class="title_text" data-level="3">배달국 목록</strong>
+                    <div class="box">
+                        <ul class="t_list">
+                            <li>
+                                <div class="item_tit">                                    
+                                    <div class="input_set" data-type="checkbox">  
+                                        <input type="checkbox" id="one"  /><!-- id / label연결-->
+                                        <label for="one">
+                                            <span class="text">
+                                                성남송파 <span class="num">(12,930)</span>
+                                            </span>
+                                        </label>   
+                                    </div>
+                                </div>
+                                <button type="button" class="btn_target_list">삭제</button>
+                            </li>
+                            <li>
+                                <div class="item_tit">                                    
+                                    <div class="input_set" data-type="checkbox">  
+                                        <input type="checkbox" id="two"  /><!-- id / label연결-->
+                                        <label for="two">
+                                            <span class="text">
+                                                서울강남 <span class="num">(1,930)</span>
+                                            </span>
+                                        </label>   
+                                    </div>
+                                </div>                           
+                                <button type="button" class="btn_target_list">삭제</button>
+                            </li>
+                            <li>
+                                <div class="item_tit">                                    
+                                    <div class="input_set" data-type="checkbox">  
+                                        <input type="checkbox" id="three"  /><!-- id / label연결-->
+                                        <label for="three">
+                                            <span class="text">
+                                                서울광진 <span class="num">(930)</span>
+                                            </span>
+                                        </label>   
+                                    </div>
+                                </div>                     
+                                <button type="button" class="btn_target_list">삭제</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <button type="button" class="mini_field_btn">전체삭제</button>
+                </div>
+
+                <div class="target_box" data-list="target">
+                    <strong class="title_text" data-level="3">발송대상 목록</strong>
+                    <div class="box">
+                        <ul class="t_list">
+                            <li class="on">
+                                <a href="#" class="item_tit">역삼동 <span class="num">(3,930)</span></a>
+                                <ul class="t_sub_list"><!-- sub list -->
+                                    <li><a href="#">ACROHILLS 논현 <span class="num">(368)</span></a></li>
+                                    <li><a href="#">거평프리젠아파트<span class="num">(368)</span></a></li>
+                                    <li><a href="#">경남논현아파트<span class="num">(368)</span></a></li>
+                                    <li><a href="#">골든캐슬<span class="num">(368)</span></a></li>
+                                    <li><a href="#">그랑디오스아파트<span class="num">(368)</span></a></li>
+                                </ul>
+                                <button type="button" class="btn_target_list">삭제</button>
+                            </li>
+                            <li>
+                                <a href="#" class="item_tit">개포동 <span class="num">(2,930)</span></a>
+                                <ul class="t_sub_list">
+                                    <li><a href="#">ACROHILLS 논현 <span class="num">(368)</span></a></li>
+                                    <li><a href="#">거평프리젠아파트<span class="num">(368)</span></a></li>
+                                    <li><a href="#">경남논현아파트<span class="num">(368)</span></a></li>
+                                    <li><a href="#">골든캐슬<span class="num">(368)</span></a></li>
+                                    <li><a href="#">그랑디오스아파트<span class="num">(368)</span></a></li>
+                                </ul>
+                                <button type="button" class="btn_target_list">삭제</button>
+                            </li>
+                            <li>
+                                <a href="#" class="item_tit">삼성동 <span class="num">(3,930)</span></a>
+                                <ul class="t_sub_list">
+                                    <li><a href="#">ACROHILLS 논현 <span class="num">(368)</span></a></li>
+                                    <li><a href="#">거평프리젠아파트<span class="num">(368)</span></a></li>
+                                    <li><a href="#">경남논현아파트<span class="num">(368)</span></a></li>
+                                    <li><a href="#">골든캐슬<span class="num">(368)</span></a></li>
+                                    <li><a href="#">그랑디오스아파트<span class="num">(368)</span></a></li>
+                                </ul>
+                                <button type="button" class="btn_target_list">삭제</button>
+                            </li>
+                            <li>
+                                <a href="#" class="item_tit">논현동 <span class="num">(930)</span></a>
+                                <ul class="t_sub_list">
+                                    <li><a href="#">ACROHILLS 논현 <span class="num">(368)</span></a></li>
+                                    <li><a href="#">거평프리젠아파트<span class="num">(368)</span></a></li>
+                                    <li><a href="#">경남논현아파트<span class="num">(368)</span></a></li>
+                                    <li><a href="#">골든캐슬<span class="num">(368)</span></a></li>
+                                    <li><a href="#">그랑디오스아파트<span class="num">(368)</span></a></li>
+                                </ul>
+                                <button type="button" class="btn_target_list">삭제</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="toggle_sec">
+                        <button type="button" class="fold">모두접기</button>
+                        <button type="button" class="unfold">모두펼치기</button>
+                    </div>
+                    <button type="button" class="mini_field_btn">전체삭제</button>
+                </div>
+
+            </div>
+
+            <p class="total">
+                총 <span>5,640</span> 건 입니다.
+            </p>
+            <div class="btn_sec">
+                <button type="submit" class="btn_save">발송대상 저장</button>
+                <button type="button" class="btn_next">다음단계로 </button>
+            </div>
+        </div>      
+        <div class="map_view">
+            <img src="/images/temp/tmp_map.jpg" alt="" style="width:100%; height:100%;" /><!-- dumy 이미지 , 지도 붙인 후  삭제 -->
+            <!-- 지도 표시 -->
+        </div>
+    </div>       
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <script>        
+
+        $(function(){
+            
+
+            //카테고리 (주소/업종) , 상세조건           
+            var businessSrch = $(".business_condition");
+            var btnMyList = $("#btnChoiceMyList"); //my 주소록 버튼
+            var cateTabLi = $("#categoryTab").find("li");
+            var aSpecSet = $("#addSpecSettings");
+            var btnToggleSpec = aSpecSet.find(".btn_toggle_specific"); //상세조건 버튼
+            var btnSendSpec = aSpecSet.find(".btn_send_specific"); //상세조건 설정완료 버튼
+            var aSpecSetList = aSpecSet.find(".specific_sec");
+            var nowStatus = cateTabLi.filter(".on").find("a").attr("href");
+            var btnBcate = businessSrch.find(".btn_b_detail"); //업종상세분류 검색버튼
+            var btnBkey = businessSrch.find(".btn_b_keyword"); //업종키워드 검색버튼
+
+            //발송대상
+            var sendTargetSec = $(".target_sec");
+            var btnToggleDetail = sendTargetSec.find(".btn_detail_address"); //발송대상 목록열기버튼
+            var sDetailSet = sendTargetSec.find(".srch_detail_address");            
+            var btnSendDetail = sDetailSet.find(".btn_send_detail"); //발송대상 추가버튼 
+            
+            selectCategory(nowStatus); //초기 설정
+
+            cateTabLi.on("click", function(){ //카테고리 변경 시 
+                var id = $(this).find("a").attr("href");
+                selectCategory(id);
+                $(this).addClass("on").siblings("li").removeClass("on");
+                //폼 초기화 필요?!
+            })
+            
+            btnToggleSpec.on("click", function(){
+                aSpecSetList.toggleClass("on")//상세조건 여닫
+            })
+
+            btnSendSpec.on("click",  function(){
+                //And 조건 전송 필요
+                aSpecSetList.removeClass("on")//상세조건 닫기
+            })
+
+            btnToggleDetail.on ("click", function(){
+                sDetailSet.toggleClass("on")//상세주소 여닫
+            })
+
+            btnSendDetail.on("click", function(){
+                sDetailSet.removeClass("on")//상세주소 닫기
+            })
+
+            //tab활성화
+            N('#subAddTab').tab({
+
+            });
+
+            btnMyList.on("click", function(){ //my 주소록
+                N().popup({
+                    url : "/design/myAddressList.html",
+                    title : '바로DM My 주소록',
+                    button : false
+                }).open()
+            })
+            btnBkey.on("click", function(){ //키워드 검색
+                N().popup({
+                    url : "/design/businessKeywordSrch.html",
+                    title : '업종 키워드 검색',
+                    message : {
+                        "ko_KR" : {
+                            "confirm" : "저장"
+                        }
+                    },
+                    "confirm" : false
+                }).open()
+            })
+            btnBcate.on("click", function(){ //업종상세 검색
+                N().popup({
+                    url : "/design/businessDetailCategory.html",
+                    title : '업종 상세분류',
+                    message : {
+                        "ko_KR" : {
+                            "confirm" : "저장"
+                        }
+                    },
+                    "confirm" : false
+                }).open()
+            })
+            
+
+            function selectCategory(id){ //카테고리 함수
+                if(id === "#business"){
+                    businessSrch.show();
+                    aSpecSet.hide();
+                }else{
+                    businessSrch.hide();
+                    aSpecSet.show();
+                }
+            }
+
+        })
+        
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>맞춤DM 요금계산기 | 바로 DM</title>
+</head>
+<body>
+    <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
+    </div>
+
+
+
+    <!--  sub layout -->
+    <div class="sub_visual" data-category="custom_dm">
+        CUSTOM PR DM
+    </div>
+    <section class="content">
+        <div class="info_title">
+            <h2 class="tit">맞춤DM 요금계산기</h2>
+            <p class="desc">
+                바로DM의 ‘맞춤DM 요금 계산기’로 주문 전에 DM 발송 예상 비용을 산출할 수 있습니다.
+            </p>
+        </div>
+        <div class="calc_sec">            
+            <div class="data_table">
+                <table>
+                    <caption>일반DM 요금계산항목입력</caption>
+                    <colgroup>
+                        <col style="width:170px" />
+                        <col style="width:auto" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">발송수량</th>
+                            <td>
+                                <input type="text" title="발송수량" data-width="w240px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">사이즈</th>
+                            <td>
+                                <select name="" id="" title="사이즈" data-width="w240px">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">전단지면 수</th>
+                            <td>
+                                <select name="" id="" title="전단지면 수" data-width="w240px">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">색상 선택</th>
+                            <td>
+                                <select name="" id="" title="색상 선택" data-width="w240px">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">재질 선택</th>
+                            <td>
+                                <select name="" id="" title="재질 선택" data-width="w240px">
+                                    <option value="">선택</option>
+                                </select> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">디자인 제작</th>
+                            <td>
+                                <select name="" id="" title="디자인 제작" data-width="w240px">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn_list" data-align="right">
+                <button class="out_field_btn" type="button">요금계산</button>
+            </div>
+            <div class="calc_total">
+                <p class="warning">
+                    요금계산기를 통해 산출된 요금은 실 주문 금액과 차이가 있을 수 있습니다. (수량, 제작물 상세 내역 상이할 시) 
+                </p>
+                <p class="price">
+                    약 <span data-price>350,000</span> 원
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- sub layout -->
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+</body>    
+</html>

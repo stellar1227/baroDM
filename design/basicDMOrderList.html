@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>일반DM 주문하기 | 바로 DM</title>
+</head>
+<body>
+    <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
+    </div>
+
+    <!--  sub layout -->
+    <div class="sub_visual" data-category="basic_dm">
+        GENERAL DM
+    </div>
+    <section class="content" data-type="order_sec"><!-- 주문하기 step있는 경우만 data-type="order_sec" -->
+        <div class="info_title">
+            <h2 class="tit">일반DM 주문하기</h2>
+        </div>
+        <div class="order_step_sec" id="orderMenu">
+            <ul>
+                <li class="completed"><a href="#step1">디자인 / 제작물 기본 정보</a></li>
+                <li class="completed"><a href="#step2">주소록 업로드</a></li>
+                <li class="completed"><a href="#step3">발신자 정보</a></li>
+                <li class="completed"><a href="#step4">봉투 표기 내용</a></li>
+                <li class="active"><a href="#" id="saveNpurchase">저장 및 결제</a></li>
+            </ul>
+        </div>
+        <!-- parsing -->
+        <div class="order_data_sec">
+            <h3 class="title_text" data-level="2">05. 저장 및 결제</h3>
+            <div class="t_cont">
+                <h4 class="title_text" data-level="3">상품정보</h4>
+                <div class="list_table">
+                    <table>
+                        <caption>상품 정보</caption>
+                        <colgroup>
+                            <col style="width:auto" />
+                            <col style="width:170px" />
+                            <col style="width:170px" />
+                            <col style="width:170px" />
+                            <col style="width:170px" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">상품</th>
+                                <th scope="col">발송수</th>
+                                <th scope="col">전단지면 수</th>
+                                <th scope="col">사이즈</th>
+                                <th scope="col">디자인제작</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>일반DM</td>
+                                <td>1240건</td>
+                                <td>3 면</td>
+                                <td>A4</td>
+                                <td>신청</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="t_cont">
+                <h4 class="title_text" data-level="3">발신자정보</h4>
+                <div class="data_table">
+                    <table>
+                        <caption>발신자 정보</caption>
+                        <colgroup>
+                            <col style="width:210px">
+                            <col style="width:380px">
+                            <col style="width:210px">
+                            <col style="width:auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">주문자이름</th>
+                                <td><span class="data">나주문</span></td>
+                                <th scope="row">상호(발신자)</th>
+                                <td><span class="data">우리우리회사</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">주소</th>
+                                <td colspan="3">
+                                    <span class="data">11917 서울시 광진구 자양동 3211</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연락처</th>
+                                <td colspan="3">
+                                    <span class="data">010 1555 3456</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이메일</th>
+                                <td colspan="3"><span class="data">tasde@nate.com</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="t_cont">
+                <h4 class="title_text" data-level="3">봉투 표기 내용</h4>
+                <div class="list_table">
+                    <table>
+                        <caption>봉투 표기 내용</caption>
+                        <colgroup>
+                            <col style="width:210px">
+                            <col style="width:210px">
+                            <col style="width:auto">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">발송인명</th>
+                                <th scope="col">수신인 표기</th>
+                                <th scope="col">봉투 문구</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    나주문
+                                </td>
+                                <td>
+                                    세대주님
+                                </td>
+                                <td>
+                                    안녕하세요. 세대주님 우리 병원 입니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="t_cont">
+                <h4 class="title_text" data-level="3">주문 시 요청사항</h4>
+                <div class="msg">
+                    요청사항 없을땐? 'ㅅ'?
+                </div>
+            </div>
+            <div class="t_cont">
+                <h4 class="title_text" data-level="3">결제정보</h4>
+                <div class="data_table">
+                    <table>
+                        <caption>결제 내역</caption>
+                        <colgroup>
+                            <col style="width:210px" />
+                            <col style="width:180px" />
+                            <col style="width:auto" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">결제 예정금액(VAT포함)</th>
+                                <td colspan="2">   
+                                    <span class="data">
+                                        <span data-price>190,000</span>
+                                        원
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" rowspan="4">상세내역</th>
+                                <th data-class="sub_th">인쇄비</th>
+                                <td>
+                                    <span class="data">
+                                        <span>30,000</span> 원
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-class="sub_th">추가봉입비</th>
+                                <td>
+                                    <span class="data">
+                                        <span>30,000</span> 원
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-class="sub_th">우편료</th>
+                                <td>
+                                    <span class="data">
+                                        <span>100,000</span> 원
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-class="sub_th">봉입비</th>
+                                <td>
+                                    <span class="data">
+                                        <span>100,000</span> 원
+                                    </span>
+                                </td>
+                            </tr>    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="t_cont">
+                <h4 class="title_text" data-level="3">기업결제</h4>
+                <div class="data_table">
+                    <table>
+                        <caption>기업 결제</caption>
+                        <colgroup>
+                            <col style="width:210px" />
+                            <col style="width:auto" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">기업명</th>
+                                <td><span class="data">빌포스트</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사업자등록번호</th>
+                                <td><span class="data">220-81-94270</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사업자등록증 첨부 (필수)</th>
+                                <td>
+                                    <div class="input_file_set">
+                                        <input type="text" readonly="">
+                                        <input type="file" id="file_add_company">
+                                        <label for="file_add_company">파일첨부하기</label>
+                                    </div>
+                                    <span class="star_noti">세금계산서 발행을 위해 사업자등록증은 필수로 첨부하셔야 합니다.</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="a_list">
+                    <li>
+                        <div class="input_set" data-type="checkbox">
+                            <input type="checkbox" id="agree1"  />
+                            <label for="agree1">
+                                <span class="text">(필수) 이용 약관에 모두 동의합니다.</span>
+                            </label>
+                            <a href="#">약관보기</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input_set" data-type="checkbox">
+                            <input type="checkbox" id="agree2"  />
+                            <label for="agree2">
+                                <span class="text">(필수) 위 상품의 구매조건 확인 및 결제진행 동의</span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn_list" data-align="center">
+                <button type="submit" class="out_field_btn">결제하기</button>
+            </div>
+        </div>
+        <!-- parsing -->
+    </section>
+    <!-- sub layout -->
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>    
+    <script src="/js/dmOrder.ui.js"></script>  
+    <script>
+        $(function(){
+            //라우터 처리를 어떻게 하실 지 모르겠어서 'ㅅ')..
+            //이 페이지에서 이전 메뉴 클릭 시에는 입력페이지로 다시 돌려주세요 'ㅅ'
+        })
+    </script>
+</body>    
+</html>

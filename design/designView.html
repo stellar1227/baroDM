@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">    
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <title>시안확인 | 바로 DM</title>
+</head>
+<body>
+    <div class="popup_layout">
+        <div class="inner_popup">            
+            <div class="list_table">
+                <table id="designOrderView">
+                    <caption>주문내역</caption>
+                    <colgroup>
+                        <col style="width:22%" />
+                        <col style="width:22%" />
+                        <col style="width:22%" />
+                        <col style="width:auto" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">주문번호</th>
+                            <th scope="col">주문자명</th>
+                            <th scope="col">디자인제작</th>
+                            <th scope="col">디자인 편집 주문</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="num"></td>
+                            <td id="name"></td>
+                            <td id="isDesign"></td>
+                            <td id="edit"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="design_sec"><!-- 2018-09-27 수정사항 반영 -->                
+                <div class="design_box">
+                    <h2 class="title_text" data-level="3">선택한 디자인 템플릿</h2>
+                    <div class="imgPreview">
+                        <div class="preview_box">
+                            <span class="thumbnail">                      
+                                <img src="/images/temp/tmp_design.jpg" alt=""> <!-- 215 * 300 처음 이미지 src가지고 렌더링 -->
+                                <button type="button" class="btn_img_more">크게보기</button>
+                            </span>
+                            <a href="#" class="field_btn btn_download">시안 다운로드 받기</a>
+                        </div>
+                        <ul class="preview_list">
+                            <li><img src="/images/temp/tmp_design.jpg" alt=""></li><!-- 96 * 163 -->
+                            <li><img src="/images/temp/tmp_design2.jpg" alt=""></li>
+                            <li><img src="/images/temp/tmp_design.jpg" alt=""></li>
+                            <li><img src="/images/temp/tmp_design2.jpg" alt=""></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="img_viewer">
+                            <img src="" alt="">
+                            <button class="btn_closing">닫기</button>
+                        </div><!--  이미지 크게보기 -->
+                    </div>
+                </div>
+                <div class="design_box">
+                    <h2 class="title_text" data-level="3">주문 시 요청 사항 (특이사항 및 별도 요청사항 기재)</h2>
+                    <textarea class="msg_box" placeholder="요청사항 입력"></textarea>
+                    <div class="confirm_sec">                    
+                        <div class="input_set" data-type="checkbox">
+                            <input type="checkbox" id="confirm"  />
+                            <label for="confirm">
+                                <span class="text">시안확인 완료 (시안 검수 완료)</span>
+                            </label>   
+                        </div>
+                    </div>
+                    <dl class="manager">
+                        <dt>담당자</dt>
+                        <dd>나작업 02-456-8880</dd>
+                    </dl>
+                </div>                
+            </div><!-- //2018-09-27 수정사항 반영 -->               
+        </div>
+    </div>
+    <script>
+        //주문내역
+        var o_data = [{
+            "num" : "ABC000000",
+            "name" : "홍길동",
+            "isDesign" : "신청",
+            "edit" : "부분수정(로고 및 문구)" //value 값이 뭐가 있는지... 모름....sb에 없네요
+        }]
+        N(o_data).grid("#designOrderView").bind();
+
+        
+        $(".imgPreview").length && imgViewer.init(); //추가 2018-09-27
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>내정보 수정 | 바로 DM</title>
+</head>
+<body>
+    <div class="sub_visual" data-category="my">
+        ORDERING DELEVERY
+    </div>
+    <section class="content">
+        <div class="info_title">
+            <h2 class="tit">내정보 수정</h2>
+            <p class="desc">내정보를 수정 및 추가 하실 수 있는 페이지입니다.</p>
+        </div>
+        <fieldset class="form_field">
+            <div class="data_table">
+                <table>
+                    <caption>내정보 수정</caption>
+                    <colgroup>
+                        <col style="width:220px;" />
+                        <col style="width:auto" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">고객명</th>
+                            <td>
+                                <span class="data">홍길동</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">아이디</th>
+                            <td>
+                                <span class="data">bbccdd</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                신규 비밀번호
+                                <span class="important" title="필수입력">*</span>
+                            </th>
+                            <td>
+                                <input type="password" title="신규비밀번호" data-width="w260px" />
+                                <span class="star_noti">
+                                    영문 대/소문자, 숫자, 특수문자 중 2종류 이상 조합(10자 이상)해 작성해주세요.
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                비밀번호 확인
+                                <span class="important" title="필수입력">*</span>
+                            </th>
+                            <td>
+                                <input type="password" title="비밀번호 확인" data-width="w260px" />
+                                <span class="form_valid_msg">
+                                    입력하신 번호와 다릅니다. 정확한 비밀번호를 입력하세요.
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row">
+                                연락처
+                                <span class="important" title="필수입력">*</span>
+                            </th>
+                            <td>
+                                <div class="tel_set">
+                                    <input type="number" title="연락처" data-width="w120px">
+                                    <span class="bar">-</span>
+                                    <input type="number" title="두번째자리" data-width="w120px">
+                                    <span class="bar">-</span>
+                                    <input type="number" title="세번째자리" data-width="w120px">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                이메일
+                                <span class="important" title="필수입력">*</span>
+                            </th>
+                            <td>
+                                <div class="email_set">    
+                                    <input type="text" data-width="w120px" />
+                                    <span class="bar">@</span>
+                                    <input type="text" data-width="w120px" class="email_company" />
+                                    <select id="emailCompany" name="" data-width="w120px">
+                                        <option value="">직접입력</option>
+                                        <option value="naver.com">naver</option>
+                                        <option value="daum.net">daum</option>
+                                        <option value="nate.com">nate</option>
+                                        <option value="gmail.com">gmail</option>
+                                    </select>
+                                </div>            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        
+        <fieldset class="form_field">
+            <legend class="title_text" data-level="2">선택입력</legend>
+            <div class="data_table">
+                <table>
+                    <caption>선택항목</caption>
+                    <colgroup>
+                        <col style="width:220px" />
+                        <col style="width:auto" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">DM 발신자명</th>
+                            <td><input type="text" placeholder="15자이내" title="DM 발신자명" data-width="w330px"></td>  
+                        </tr>
+                        <tr>
+                            <th scope="row">거주지</th>
+                            <td>
+                                <select name="" id="city" data-width="w160px">
+                                    <option value="">시도</option>
+                                </select>
+                                <select name="" id="place" data-width="w160px">
+                                    <option value="">지역상세</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        <div class="btn_list" data-align="center">
+            <button type="submit" class="out_field_btn">확인</button>
+            <button type="reset" class="out_field_btn" data-color="gray">취소</button>
+        </div>
+    </section>
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    
+</body>
+</html>

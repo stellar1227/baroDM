@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">    
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <title>바로DM My 주소록 | 바로 DM</title>
+</head>
+<body>
+    <div class="popup_layout">
+        <div class="inner_popup" data-type="no-button">
+            <ul class="noti_list">
+                <li class="star_noti">
+                    원하는 주소록 리스트를 선택하시면 <span>해당 주소록의 발송 타겟 데이터가 적용</span>됩니다. 
+                </li>
+                <li class="star_noti">
+                    타겟 설정 화면에서 <span>상세 내역 수정이 가능</span>합니다. 
+                </li>
+            </ul>                    
+            <div class="list_table">
+                <table id="myAddressList">
+                    <caption>My 주소록</caption>
+                    <colgroup>
+                        <col style="width:9.8%" />
+                        <col style="width:auto;" />
+                        <col style="width:18%" />
+                        <col style="width:18%" />
+                        <col style="width:16%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">NO</th>
+                            <th scope="col">주소록명</th>
+                            <th scope="col">발송수량</th>
+                            <th scope="col">저장날짜</th>
+                            <th scope="col">선택</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span id="num"></span>
+                            </td>
+                            <td data-align="left">
+                                <span id="title" class="title"></span>
+                            </td>
+                            <td>
+                                <span id="quantity"></span>건
+                            </td>
+                            <td>
+                                <span id="date"></span>
+                            </td>
+                            <td>
+                                <button type="button" class="mini_field_btn">선택</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="pagination" data-mt="40">
+                <ul>
+                    <li><a href="#" title="첫페이지">first</a></li> 
+                    <li><a href="#" title="이전">prev</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#"><span>1</span></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#" title="다음페이지">next</a></li>
+                    <li><a href="#" title="마지막페이지">last</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var data = [{
+            "num" : "1",
+            "title" : "대치동 빌라중심",
+            "quantity" : "1500",
+            "date" : "2018-01-11"
+        },{
+            "num" : "2",
+            "title" : "대치동 빌라중심",
+            "quantity" : "1500",
+            "date" : "2018-01-11"
+        },{
+            "num" : "3",
+            "title" : "자양동 빌라중심",
+            "quantity" : "4000",
+            "date" : "2018-01-11"
+        },{
+            "num" : "4",
+            "title" : "수서동 빌라중심",
+            "quantity" : "3400",
+            "date" : "2018-01-11"
+        },{
+            "num" : "5",
+            "title" : "대치동 빌라중심",
+            "quantity" : "1500",
+            "date" : "2018-01-11"
+        }, {
+            "num" : "6",
+            "title" : "대치동 빌라중심",
+            "quantity" : "1500",
+            "date" : "2018-01-11",
+        },{
+            "num" : "7",
+            "title" : "대치동 빌라중심",
+            "quantity" : "3870",
+            "date" : "2018-01-11"
+        },{
+            "num" : "8",
+            "title" : "중곡동 빌라중심",
+            "quantity" : "12000",
+            "date" : "2018-01-11"
+        },{
+            "num" : "9",
+            "title" : "대치동 빌라중심",
+            "quantity" : "1500",
+            "date" : "2018-01-11"
+        },{
+            "num" : "10",
+            "title" : "대치동 빌라중심",
+            "quantity" : "1500",
+            "date" : "2018-01-11"
+        },{
+            "num" : "11",
+            "title" : "대치동 빌라중심",
+            "quantity" : "1500",
+            "date" : "2018-01-11"
+        },{
+            "num" : "12",
+            "title" : "대치동 빌라중심",
+            "quantity" : "1500",
+            "date" : "2018-01-11"
+        },{
+            "num" : "13",
+            "title" : "자양동 빌라중심",
+            "quantity" : "4000",
+            "date" : "2018-01-11"
+        },{
+            "num" : "14",
+            "title" : "수서동 빌라중심",
+            "quantity" : "3400",
+            "date" : "2018-01-11"
+        }]
+    
+        
+    var address = N(data).grid("#myAddressList").bind();
+
+    N(data).pagination({
+        context: "#pagination",
+        countPerPageSet : 10,
+        onChange : function(pageNo, selEle, selData, currPageNavInfo){
+            address.bind(selData)
+        }
+    }).bind();    
+    </script>
+    
+</body>
+</html>

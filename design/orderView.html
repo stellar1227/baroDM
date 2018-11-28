@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">    
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <title>주문내역 상세보기 | 바로 DM</title>
+</head>
+<body>
+    <div class="popup_layout">
+        <div class="inner_popup">            
+            <div class="list_table">
+                <table id="orderView">
+                    <caption>주문내역</caption>
+                    <colgroup>
+                        <col style="width:25%" />
+                        <col style="width:25%" />
+                        <col style="width:25%" />
+                        <col style="width:25%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">주문번호</th>
+                            <th scope="col">주문자명</th>
+                            <th scope="col">주문금액</th>
+                            <th scope="col">결제상태</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="num"></td>
+                            <td id="name"></td>
+                            <td>
+                                <span id="price" data-color="price"></span>원
+                            </td>
+                            <td id="isPayed"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="view_box">                    
+                <h2 class="title_text" data-level="3">상품정보</h2>
+                <div class="list_table">
+                    <table id="productView">
+                        <caption>상품정보내역</caption>
+                        <colgroup>
+                            <col style="width:20%" />
+                            <col style="width:20%" />
+                            <col style="width:20%" />
+                            <col style="width:20%" />
+                            <col style="width:20%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">상품</th>
+                                <th scope="col">발송수량</th>
+                                <th scope="col">전단지면 수</th>
+                                <th scope="col">사이즈</th> 
+                                <th scope="col">디자인제작</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="type"></td>
+                                <td>
+                                    <span id="case"></span>건
+                                </td>
+                                <td>
+                                    <span id="page"></span>면
+                                </td>
+                                <td id="size"></td>
+                                <td id="isDesign"></td>    
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="view_box">                    
+                <h2 class="title_text" data-level="3">발신자정보</h2>
+                <div class="data_table">
+                    <table id="sendUserView">
+                        <caption>발신자정보내역</caption>
+                        <colgroup>
+                            <col style="width:215px" />
+                            <col style="width:auto" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">주문자이름</th>
+                                <td>
+                                    <span class="data" id="user_name"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">상소(발신자)</th>
+                                <td>
+                                    <span class="data" id="send_name"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">주소</th>
+                                <td>
+                                    <span class="data" id="address"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연락처</th>
+                                <td>
+                                    <span class="data" id="tell"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이메일</th>
+                                <td>
+                                    <span class="data" id="email"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="view_box">                    
+                <h2 class="title_text" data-level="3">봉투 표기 내용</h2>
+                <div class="list_table">
+                    <table id="envelopeView">
+                        <caption>봉투 표기 내역</caption>
+                        <colgroup>
+                            <col style="width:33%" />
+                            <col style="width:33%" />
+                            <col style="width:auto" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">발송인명</th>
+                                <th scope="col">수신인 표기</th>
+                                <th scope="col">봉투 문구</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="name"></td>
+                                <td id="receiver"></td>
+                                <td id="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="view_box">                    
+                <h2 class="title_text" data-level="3">결제 정보</h2>
+                <div class="data_table">
+                    <table id="purchaseView">
+                        <caption>결제 내역</caption>
+                        <colgroup>
+                            <col style="width:215px" />
+                            <col style="width:auto" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">결제 예정금액(VAT포함)</th>
+                                <td colspan="2">   
+                                    <span class="data">
+                                        <span data-price id="total">190,000</span>
+                                        원
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" rowspan="4">상세내역</th>
+                                <th data-class="sub_th">인쇄비</th>
+                                <td>
+                                    <span class="data">
+                                        <span id="print"></span>
+                                        원
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-class="sub_th">추가봉입비</th>
+                                <td>
+                                    <span class="data">
+                                        <span id="add_blanket"></span>
+                                        원
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-class="sub_th">우편료</th>
+                                <td>
+                                    <span class="data">
+                                        <span id="post"></span>
+                                        원
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-class="sub_th">봉입비</th>
+                                <td>
+                                    <span class="data">
+                                        <span id="blanket"></span>
+                                        원
+                                    </span>
+                                </td>
+                            </tr>    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //주문내역
+        var o_data = [{
+            "num" : "ABC000000",
+            "name" : "홍길동",
+            "price" : "190,000",
+            "isPayed" : "Y"
+        }]
+        N(o_data).grid({
+            context : "#orderView",
+            rowHandlerBeforeBind : function(idx, el, data){
+                data.isPayed = data.isPayed === "Y" ? "완료" : "대기"
+            }
+        }).bind();
+
+        //상품정보
+        var p_data = {
+            "type" : "일반DM",
+            "case" : "1240",
+            "page" : "3",
+            "size" : "A4",
+            "isDesign" : "true"
+        }
+        N(p_data).grid({
+            context : "#productView",
+            rowHandlerBeforeBind : function(idx, el, data){
+                data.isDesign = data.isDesign === "true" ? "신청" : "파일업로드"
+            }
+        }).bind();
+
+        //발신자 정보
+        var user_data = {
+            "user_name" : "나주문",
+            "send_name" : "우리회사",
+            "address" : "1245 서울시 광진구 자양동 321",
+            "tell" : "010 1555 1515",
+            "email" : "email@gmail.com"
+        }
+        N(user_data).grid("#sendUserView").bind();
+
+        //봉투 표기 내용
+        var env_data = {
+            "name" : "나주문",
+            "receiver" : "세대주님",
+            "text" : ""
+        }
+        N(env_data).grid({
+            context : "#envelopeView",
+            rowHandlerBeforeBind : function(idx,el,data){
+                if(data.text === "") data.text = "없음";
+            }
+        }).bind();
+
+        //결제 정보
+        var price_data = {
+            "total" : "290,000",
+            "print" : "190,000",
+            "add_blanket" : "30,000",
+            "post" : "150,000",
+            "blanket" : "10,000"
+        }
+        N(price_data).grid("#purchaseView").bind();
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>주문/발송현황 | 바로 DM</title>
+</head>
+<body>
+    <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
+    </div>
+
+
+
+    <!--  sub layout -->
+    <div class="sub_visual" data-category="my">
+        ORDERING DELEVERY
+    </div>
+    <section class="content">
+        <div class="info_title">
+            <h2 class="tit">주문/발송현황</h2>
+            <p class="desc">
+                회원님이 주문하신 DM주문/발송현황을 한눈에 보실 수 있습니다.
+            </p>
+        </div>
+        <div class="order_sec">
+            <section class="srch_condition">
+                <h3 class="blind">조건검색</h3>
+                <div class="srch_radio">
+                    <input type="radio" id="month3" name="terms" checked />
+                    <label for="month3">3개월</label>
+                </div>
+                <div class="srch_radio">
+                    <input type="radio" id="month6" name="terms" />
+                    <label for="month6">6개월</label>
+                </div>
+                <div class="srch_radio">
+                    <input type="radio" id="year1" name="terms" />
+                    <label for="year1">1년</label>
+                </div>
+                <div class="srch_radio">
+                    <input type="radio" id="all_term" name="terms" />
+                    <label for="all_term">전체</label>
+                </div>
+                <select name="" id="statusCondition">
+                    <option value="">전체</option>
+                </select>
+            </section>
+            <ul id="orderWrap">
+                <li class="order_article">
+                    <h3 class="title_text" data-level="3">
+                        <span id="date"></span> 주문
+                    </h3>
+                    <div class="list_table">
+                        <table>
+                            <caption>주문내역 및 진행상태</caption>
+                            <colgroup>
+                                <col style="width:17.5%" />
+                                <col style="width:15%" />
+                                <col style="width:29%" />
+                                <col style="width:9.6%" />
+                                <col style="width:auto" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">주문번호</th>
+                                    <th scope="col">주문자명</th>
+                                    <th scope="col">주문금액</th>
+                                    <th scope="col">결제상태</th>
+                                    <th scope="col">시안</th>
+                                    <th scope="col">주문내역 상세보기</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="num"></td>
+                                    <td id="name"></td>
+                                    <td>
+                                        <span data-color="price"  id="price"></span>
+                                    </td>
+                                    <td id="isPayed"></td>
+                                    <td class="design"></td><!-- 2018-09-17 수정 -->
+                                    <td>
+                                        <a href="#" class="more view">상세보기</a>
+                                    </td><!-- //2018-09-17 수정 -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <dl class="progress_desc">
+                        <dt>진행상태</dt>
+                        <dd class="status">
+                            <ol>
+                                <li>주문완료</li>
+                                <li>결제완료</li>
+                                <li>시안작업 중</li>
+                                <li>발송</li>
+                            </ol>
+                        </dd>
+                    </dl>
+                    <div class="btn_list" data-align="right">
+                        <button class="out_field_btn">주문취소</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- sub layout -->
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <script>
+        var option = [{
+            "key" : "시안작업 중",
+            "val" : "step1"
+        },{
+            "key" : "발송 중",
+            "val" : "step2"
+        },{
+            "key" : "발송완료",
+            "val" : "step3"
+        }]
+        N(option).select("#statusCondition").bind();
+        /*
+            @data descrption 
+            id : 주문아이디
+            date : 주문날짜 (YYYY-MM-DD)
+            num : 주문번호
+            price : 주문금액 (000,000원)
+            name : 주문자명
+            isPayed : 결제 상태 (boolean)
+            status : 진행상태 (1 : 주문완료 ,2 : 결제 완료 ,3: 시안작업 중, 4 : 발송)
+        */
+        var data = [{ //data 규격을 알면 만들기 더 쉬울텐데 또르륵... 차라리 restAPI를 주시지..ㅠㅠ.. JSON규격이라도 알려주시지...나중에 개발하실때는 맞춰서 다 변경하세요 조건이랑흑흑
+            "id" : "1",
+            "date" : "2018-09-10",
+            "num" : "ABC00000",
+            "name" : "홍길동",
+            "price" : "190,000원",
+            "status" : "3",
+            "isPayed" : "Y",
+        },{
+            "id" : "2",
+            "date" : "2018-09-11",
+            "num" : "ABC10000",
+            "name" : "미징징",
+            "price" : "90,000원",
+            "status" : "", 
+            "isPayed" : "N",
+        }]
+        
+        N(data).list({
+            context : "#orderWrap",
+            rowHandlerBeforeBind : function(rowIdx, rowEl, rowData){
+                var $status = rowEl.find(".status");
+                if(rowData.isPayed === "Y"){
+                    rowData.isPayed = "완료";
+                    $status.find("li").eq(rowData.status -1).addClass("on");
+                    rowEl.find(".btn_list").remove();
+                }else{
+                    rowData.isPayed = "대기";
+                    $status.html("<p class='ready'>입금대기 중입니다.</p>")
+                }
+                if(rowData.status === "3"){ // 2018-09-17 수정
+                    rowEl.find("td.design").append('<a href="#" class="more design">시안확인</a>');
+                }
+            },
+            rowHandler : function(rowIdx, rowEl, rowData){
+                rowEl.find(".more.view").on("click", function(){
+                    N().popup({
+                        url : '/design/orderView.html?=' + rowData.id,
+                        title : '주문내역 상세보기',
+                        message : {
+                            "ko_KR" : {
+                                "confirm" : "닫기"
+                            }
+                        },
+                        "confirm" : false,
+                        closeMode : "remove"
+                    }).open();
+                })
+                rowEl.find(".more.design").on("click", function(e){
+                    e.preventDefault();
+                    N().popup({
+                        url : '/design/designView.html?=' + rowData.id,
+                        title : '시안확인',
+                        message : {
+                            "ko_KR" : {
+                                "confirm" : "닫기"
+                            }
+                        },
+                        "confirm" : false,
+                        closeMode : "remove"
+                    }).open()
+                })
+            }
+        }).bind()
+
+    </script>
+</body>    
+</html>

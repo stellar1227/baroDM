@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <link rel="stylesheet" href="../highlight/styles/darcula.css" />
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <script src="../highlight/highlight.pack.js"></script>
+    <title>Document</title>
+    <style>
+        h1.s_tit{
+            font-size:30px;
+            color:#000;
+            font-weight:500;
+            margin: 0 0 20px;
+        }
+        h2.s_tit{
+            font-size:24px;
+            color:#333;
+            font-weight:500;
+            margin-bottom: 10px;
+        }
+        h2.s_tit:before{
+            content:"*";
+            display: inline-block;
+            vertical-align: middle;
+            margin-right:10px;
+        }
+        p.s_noti{
+            color:tomato;
+            margin-bottom:10px;
+        }
+        p.s_help{
+            margin-bottom: 10px;
+        }
+        body>article{
+            margin-bottom: 20px;
+        }
+        pre{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body style="padding:20px">
+    <script>hljs.initHighlightingOnLoad();</script>
+    <h1 class="s_tit">&lt; UI Component Style Guide &gt;</h1>
+    <p class="s_noti">notice : Natural.js 사용</p>
+    <article>
+        <h2 class="s_tit">FormCtrl - select</h2>
+        <select name="" id="select"><!-- select -->
+            <option value="default">선택</option>
+        </select><!-- // select -->
+        <script>
+            var option_data = [{
+                "key" : "blue",
+                "val" : "blue"
+            },{
+                "key" : "brown",
+                "val" : "brown"
+            }]
+            //옵션값  바인딩 시 
+            N(option_data).select("#select").bind();
+        </script>
+<pre>
+    <code class="html">
+    &lt;select name="" id="select"&gt;&lt;!-- select --&gt;
+        &lt;option value="default"&gt;선택&lt;/option&gt;
+    &lt;/select&gt;&lt;!-- // select --&gt;
+    </code>
+    <code class="javascript">
+    &lt;script&gt;
+        var option_data = [{
+            "key" : "blue",
+            "val" : "blue"
+        },{
+            "key" : "brown",
+            "val" : "brown"
+        }]
+        //옵션값  바인딩 시 
+        N(option_data).select("#select").bind();
+    &lt;/script&gt;
+    </code>
+</pre>
+    </article>
+
+    <article>
+        <h2 class="s_tit">FormCtrl - radio</h2>
+        <div class="input_set" data-type="radio"><!-- input:radio 기본-->            
+            <input type="radio" id="male" name="gender" />
+            <label for="male">
+                <span class="text">남</span>
+            </label>   
+        </div><!-- //input:radio-->
+        <div class="input_set" data-type="radio"><!-- input:radio 체크 -->            
+            <input type="radio" id="female" name="gender" checked />
+            <label for="female">
+                <span class="text">여</span>
+            </label>  
+        </div><!-- //input:radio-->
+        <div class="input_set" data-type="radio"><!-- input:radio 읽기전용 -->           
+            <input type="radio" id="agree" name="agree" disabled readonly checked />
+            <label for="agree">
+                <span class="text">동의</span>
+            </label>   
+        </div><!-- //input:radio-->
+        <div class="input_set" data-type="radio"><!-- input:radio 불가 -->            
+            <input type="radio" id="disagree" name="agree" disabled />
+            <label for="disagree">
+                <span class="text">비동의</span>
+            </label>  
+        </div><!-- //input:radio-->
+        <div class="input_set" data-type="radio"><!-- input:radio  불가 -->           
+            <input type="radio" id="agree1" name="agree1" disabled checked />
+            <label for="agree1">
+                <span class="text">동의1</span>
+            </label>   
+        </div><!-- //input:radio-->
+        <div class="input_set" data-type="radio"><!-- input:radio 불가 -->            
+            <input type="radio" id="disagree1" name="agree1" disabled />
+            <label for="disagree1">
+                <span class="text">비동의1</span>
+            </label>  
+        </div><!-- //input:radio-->
+<pre>
+<code class="html">
+    //id와 for 연결시에 동작, checked, disabled, readonly  사용가능 
+    &lt;div class="input_set" data-type="radio"&gt;&lt;!-- input:radio 기본--&gt;        
+        &lt;input type="radio" id="male" name="gender" /&gt;
+        &lt;label for="male"&gt;
+            &lt;span class="text"&gt;남&lt;/span&gt;
+        &lt;/label&gt;   
+    &lt;/div&gt;&lt;!-- //input:radio--&gt;
+</code>
+</pre>
+    </article>
+
+    <article>
+    <h2 class="s_tit">FormCtrl - checkbox</h2>
+    <div class="input_set" data-type="checkbox"><!-- input:checkbox 기본-->   
+        <input type="checkbox" id="one" />
+        <label for="one">
+            <span class="text">1</span>
+        </label>   
+    </div><!-- //input:checkbox-->
+    <div class="input_set" data-type="checkbox"><!-- input:checkbox 체크 -->        
+        <input type="checkbox" id="two" checked />
+        <label for="two">
+            <span class="text">2</span>
+        </label>  
+    </div><!-- //input:checkbox-->
+    <div class="input_set" data-type="checkbox"><!-- input:checkbox 읽기전용 -->
+        <input type="checkbox" id="three"  disabled readonly checked />
+        <label for="three">
+            <span class="text">3</span>
+        </label>   
+    </div><!-- //input:checkbox-->
+    <div class="input_set" data-type="checkbox"><!-- input:checkbox 불가 -->    
+        <input type="checkbox" id="four" disabled checked />
+        <label for="four">
+            <span class="text">4</span>
+        </label>  
+    </div><!-- //input:checkbox-->
+<pre>
+<code class="html">
+    //id와 for 연결시에 동작, checked, disabled, readonly  사용가능 
+    &lt;div class="input_set" data-type="checkbox"&gt;&lt;!-- input:checkbox 기본--&gt;        
+        &lt;input type="checkbox" id="one"  /&gt;
+        &lt;label for="one"&gt;
+            &lt;span class="text"&gt;1&lt;/span&gt;
+        &lt;/label&gt;   
+    &lt;/div&gt;&lt;!-- //input:checkbox--&gt;
+</code>
+</pre>
+    </article>
+
+    <article>
+        <h2 class="s_tit">FormCtrl - input</h2>
+        <input type="text" value="텍스트 필드" />
+        <input type="text" value="입력한정보" readonly />
+        <input type="text" value="입력한정보" disabled />
+        <input type="text" value="에러" data-valid="error" /><!-- error 시 data-type="error" 셋팅 -->
+        <input type="email" value="이메일" />
+<pre>
+<code class="html">
+    &lt;input type="text" value="텍스트 필드" /&gt;
+    &lt;input type="text" value="입력한정보" readonly /&gt;
+    &lt;input type="text" value="입력한정보" disabled /&gt;
+    &lt;!-- error 시 data-type="error" 셋팅 --&gt;
+    &lt;input type="text" value="에러" data-valid="error" /&gt;
+    &lt;input type="email" value="이메일" /&gt;
+</code>
+</pre>   
+    </article>
+
+    <article>
+        <h2 class="s_tit">FormCtrl - form field button</h2>
+        <!-- default button -->
+        <button type="button" class="field_btn">디자인 템플릿 찾기</button>
+        <!-- disabled button -->
+        <button type="button" class="field_btn" disabled>디자인 템플릿 찾기</button>
+        <button type="button" class="field_btn" data-type="post_num">우편번호</button>
+        <button type="button" class="field_btn" data-type="ad_add">주소추가</button>
+        <button type="button" class="field_btn" data-type="delete">전체삭제</button>
+    <pre>
+<code class="html">
+    &lt;!-- default button --&gt;
+    &lt;button type="button" class="field_btn"&gt;디자인 템플릿 찾기&lt;/button&gt;
+    &lt;!-- disabled button --&gt;
+    &lt;button type="button" class="field_btn" disabled&gt;디자인 템플릿 찾기&lt;/button&gt;
+    &lt;button type="button" class="field_btn" data-type="post_num"&gt;우편번호&lt;/button&gt;
+    &lt;button type="button" class="field_btn" data-type="ad_add"&gt;주소추가&lt;/button&gt;
+    &lt;button type="button" class="field_btn" data-type="delete"&gt;전체삭제&lt;/button&gt;
+</code>
+    </pre>
+        </article>
+
+    <article>
+        <h2 class="s_tit">FormCtrl - out field button</h2>
+        <!-- default -->
+        <button type="button" class="out_field_btn">입력완료</button>
+        <a href="#" class="out_field_btn" data-color="gray">메인으로 가기</a>
+    <pre>
+<code class="html">
+    &lt;!-- default --&gt;
+    &lt;button type="button" class="out_field_btn"&gt;입력완료&lt;/button&gt;
+    &lt;a href="#" class="out_field_btn" data-color="gray"&gt;메인으로 가기&lt;/a>
+</code>
+    </pre>
+        </article>
+
+<article>
+    <h2 class="s_tit">listTable</h2>
+    <p class="s_help">natural.js의 grid 참조</p>
+    <div class="list_table">
+        <table id="qnaList">
+            <caption>문의게시판</caption>
+            <colgroup>
+                <col style="width:6.9%" />
+                <col style="width:auto;" />
+                <col style="width:13.5%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">NO</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">등록일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span id="num"></span>
+                    </td>
+                    <td data-align="left">
+                        <span id="title" class="title"></span>
+                    </td>
+                    <td>
+                        <span id="date"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var data = [{
+            "num" : "10",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11",
+            "isReply" : "N"
+        }, {
+            "num" : "",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11",
+            "isReply" : "Y"
+        }, {
+            "num" : "8",
+            "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+            "date" : "2018-01-11",
+            "isReply" : "N"
+        }]
+    
+        
+    N(data).grid({
+        context : "#qnaList",
+        //reply Cell 있을 경우만
+        rowHandler : function(index, row, data) {
+        if(data.isReply == "Y") { 
+            row.addClass("reply");
+        }
+    }
+    }).bind()
+    
+    
+    </script>
+<pre>
+<code class="html">
+    &lt;div class="list_table"&gt;
+        &lt;table id="qnaList"&gt;
+            &lt;caption&gt;문의게시판&lt;/caption&gt;
+            &lt;colgroup&gt;
+                &lt;col style="width:6.9%" /&gt;
+                &lt;col style="width:auto;" /&gt;
+                &lt;col style="width:13.5%" /&gt;
+            &lt;/colgroup&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th scope="col"&gt;NO&lt;/th&gt;
+                    &lt;th scope="col"&gt;제목&lt;/th&gt;
+                    &lt;th scope="col"&gt;등록일&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                        &lt;span id="num"&gt;&lt;/span&gt;
+                    &lt;/td&gt;
+                    &lt;td data-align="left"&gt;
+                        &lt;span id="title" class="title"&gt;&lt;/span&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;span id="date"&gt;&lt;/span&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+</code>
+<code class="js">
+&lt;script&gt;
+    var data = [{
+        "num" : "10",
+        "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+        "date" : "2018-01-11",
+        "isReply" : "N"
+    }, {
+        "num" : "",
+        "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.바로DM의 디자인 템플릿이 추가 되었습니다.",
+        "date" : "2018-01-11",
+        "isReply" : "Y"
+    }, {
+        "num" : "8",
+        "title" : "바로DM의 디자인 템플릿이 추가 되었습니다.",
+        "date" : "2018-01-11",
+        "isReply" : "N"
+    }]
+
+    
+N(data).grid({
+    context : "#qnaList",
+    //reply Cell 있을 경우만
+    rowHandler : function(index, row, data) {
+    if(data.isReply == "Y") { 
+        row.addClass("reply");
+    }
+}
+}).bind()
+
+
+&lt;/script&gt;
+</code>
+</pre>
+</article>
+
+<article>
+    <h2 class="s_tit">dataTable</h2>
+    <p class="s_help">natural.js의 grid 참조</p>
+    <div class="data_table">
+        <table>
+            <caption>문의하기</caption>
+            <colgroup>
+                <col style="width:170px" />
+                <col style="width:auto" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">문의유형</th>
+                    <td>
+                        <div class="radio_form">
+                            <div class="input_set" data-type="radio">
+                                <input type="radio" id="male" name="gender" checked />
+                                <label for="male">
+                                    <span class="text">맞춤홍보 DM</span>
+                                </label>   
+                            </div>
+                            <div class="input_set" data-type="radio">
+                                <input type="radio" id="male" name="gender" />
+                                <label for="male">
+                                    <span class="text">일반 DM</span>
+                                </label>   
+                            </div>
+                            <div class="input_set" data-type="radio">
+                                <input type="radio" id="male" name="gender" />
+                                <label for="male">
+                                    <span class="text">기타</span>
+                                </label>   
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">작성자</th>
+                    <td>
+                        <span class="data">홍길동</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">연락처</th>
+                    <td>
+                        <input type="tell" data-width="w120px" />
+                        <input type="tell" data-width="w120px" />
+                        <input type="tell" data-width="w120px" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">이메일</th>
+                    <td>
+                        <div class="email_set">                            
+                            <input type="text" data-width="w120px" />
+                            <span class="bar">@</span>
+                            <input type="text" data-width="w120px" class="email_company" />
+                            <select id="emailCompany" name="" data-width="w160px">
+                                <option value="">직접입력</option>
+                                <option value="naver.com">naver</option>
+                                <option value="daum.net">daum</option>
+                                <option value="nate.com">nate</option>
+                                <option value="gmail.com">gmail</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">제목</th>
+                    <td>
+                        <input type="text" data-width="w100per" placeholder="25자 이내" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">내용</th>
+                    <td>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="500자 이내 작성"></textarea><!-- 에디터로 사용시 높이값 160px 입니다. -->
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">첨부</th>
+                    <td>
+                        <div class="input_file_set">
+                            <input type="text" readonly />
+                            <input type="file" id="file_add" />
+                            <label for="file_add">파일첨부하기</label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<pre>
+</pre>
+</article>
+<article>
+    <h2 class="s_tit">Text style</h2>
+    <!-- class title.text 필수 data-level로 구분 -->
+    <h1 class="title_text" data-level="1"> Heading1 </h1>
+    <h2 class="title_text" data-level="2"> Heading2 </h2>
+    <h3 class="title_text" data-level="3"> Heading3 </h3>
+    <p data-price>금액 강조 190,000</p>
+    <p class="star_notice">앞에 설탕표시 달린 문구</p>
+    <p class="warning">주의문구</p>
+<pre> 
+    <code class="html">
+    &lt;!-- class title.text 필수 data-level로 구분 --&gt;
+    &lt;h1 class="title_text" data-level="1"&gt; Heading1 &lt;/h1&gt;
+    &lt;h2 class="title_text" data-level="2"&gt; Heading2 &lt;/h2&gt;
+    &lt;h3 class="title_text" data-level="3"&gt; Heading3 &lt;/h3&gt;
+    &lt;p data-price&gt;금액 강조 190,000&lt;/p&gt;
+    &lt;p class="star_notice"&gt;앞에 설탕표시 달린 문구&lt;/p&gt;
+    &lt;p class="warning"&gt;주의문구&lt;/p&gt;
+    </code>
+</pre>
+</article>
+<article>
+    <h2 class="s_tit">popUp</h2>
+    <p class="s_noti">natural.min.js 변경했습니다. -> ui쪽의 popup객체의 loadContent method에 submit 후 받아온 page String을 div.popup_layout 기준으로 잘라서 jQuery 객체 변환 후 context에 사용합니다. </p>
+    <div id="popup" style="display:none">
+        <div style="width:300px; font-size:18px; padding:20px">
+            저는 팝업입지요 'ㅅ' 네 
+            alert은 다른놈입니다.
+        </div>
+    </div>
+    <button type="button" class="out_field_btn" id="popOpen">팝업열기 'ㅁ'</button>
+    <script type="text/javascript">
+        $("#popOpen").click(function(){
+            
+            /*페이지 내부의 블록을 팝업으로 열기*/
+            N("#popup").popup({
+                title : '내부팝업',
+                button : false
+            }).open();
+            /* 외부 페이지의 팝업 열기 
+            N().popup({
+                url : 'qna_write.html',
+                title : '1:1문의 작성',
+                message : {
+                    "ko_KR" : {
+                        "confirm" : "저장",
+                        "cancel" : "취소"
+                    }
+                }
+            }).open();
+            */    
+
+        })
+    </script>
+<pre> 
+    <code class="html">
+    &lt;!--  내부 페이지 마크업은 자유롭습니다만, 아래 외부페이지용의 레이아웃에 design이 맞춰져 있습니다. --&gt;
+    &lt;div id="popup" style="display:none"&gt;
+        &lt;div style="width:300px; font-size:18px; padding:20px"&gt;
+            저는 팝업입지요 'ㅅ' 네 
+            alert은 다른놈입니다.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 팝업용 외부 페이지 마크업은 아래 구조를 꼭 지켜주세요 inner_popup부터 포함해서 parsing 됩니다 --&gt;
+    &lt;div class="popup_layout"&gt;
+        &lt;div class="inner_popup"&gt;
+        &lt;!-- popup contents--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; 
+    </code>
+    <code class="js">
+    &lt;script type="text/javascript"&gt;
+        $("#popOpen").click(function(){
+            
+            /*페이지 내부의 블록을 팝업으로 열기*/
+            N("#popup").popup({
+                title : '내부팝업',
+                button : false
+            }).open();
+
+            /* 외부 페이지의 팝업 열기*/ 
+            N().popup({
+                url : 'qna_write.html',
+                title : '1:1문의 작성',
+                message : {
+                    "ko_KR" : {
+                        "confirm" : "저장",
+                        "cancel" : "취소"
+                    }
+                }
+            }).open();
+        })
+    &lt;/script&gt;
+    </code>
+</pre>
+</article>
+
+<article>
+    <h2 class="s_tit">pageNation</h2>
+    <div id="pagination">
+        <ul>
+            <li><a href="#" title="첫페이지">first</a></li> <!-- first 버튼 생략가능(표기하지 않으면 첫페이지로 가기 버튼이 보이지 않습니다) -->
+            <li><a href="#" title="이전">prev</a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><span>1</span></a></li>
+        </ul>
+        <ul>
+            <li><a href="#" title="다음페이지">next</a></li>
+            <li><a href="#" title="마지막페이지">last</a></li> <!-- last 버튼 생략가능(표기하지 않으면 마지막페이지로 가기 버튼이 보이지 않습니다) -->
+        </ul>
+    </div>
+    <script>
+        N().pagination({
+            context: "#pagination",
+            countPerPage : '10',
+            totalCount : '100',
+            pageNo : '3'
+        }).bind();
+    </script>
+<pre> 
+<code class="html">
+    &lt;!-- data-mt 속성으로 마진탑값 조절가능 --&gt;
+    &lt;div id="pagination" data-mt="40"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#" title="첫페이지"&gt;first&lt;/a&gt;&lt;/li&gt; &lt;!-- first 버튼 생략가능(표기하지 않으면 첫페이지로 가기 버튼이 보이지 않습니다) --&gt;
+            &lt;li&gt;&lt;a href="#" title="이전"&gt;prev&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#" title="다음페이지"&gt;next&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" title="마지막페이지"&gt;last&lt;/a&gt;&lt;/li&gt; &lt;!-- last 버튼 생략가능(표기하지 않으면 마지막페이지로 가기 버튼이 보이지 않습니다) --&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code>
+<code class="js">
+    &lt;script&gt;
+        N().pagination({
+            context: "#pagination",
+            countPerPage : '10',
+            totalCount : '100',
+            pageNo : '3'
+        }).bind();
+    &lt;/script&gt;    
+</code>
+</pre>
+</article>
+<article>
+    <h2 class="s_tit">Tab</h2>
+    <div id="tab" class="tab">
+        <ul>
+            <li><a href="#tab1">Tab1</a></li>
+            <li><a href="#tab2">Tab2</a></li>
+        </ul>        
+        <div id="tab1">Hello Tab1</div>
+        <div id="tab2">나는 탭투</div>
+    </div>
+    <script>
+        N("#tab").tab();
+    </script>
+<pre>
+<code class="html">
+    &lt;div id="tab" class="tab"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#tab1"&gt;Tab1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#tab2"&gt;Tab2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="tab_contents"&gt;
+        &lt;div id="tab1"&gt;Hello Tab1&lt;/div&gt;
+        &lt;div id="tab2"&gt;나는 탭투&lt;/div&gt;
+    &lt;/div&gt;
+</code>
+<code class="js">
+    &lt;script&gt;
+        N("#tab").tab(); //option있을경우 tabOpts에 배열로 정의
+    &lt;/script&gt;
+</code>
+</pre>    
+</article>
+<article>
+    <h2 class="s_tit">Loading spinner</h2>
+    <div class="loading_spinner">
+        <img src="/images/common/loading.gif" alt="대기" />
+    </div>
+    <script>
+        var spinner = document.querySelector('.loading_spinner'); //이건 그냥 보여주기 예시고, 실제로는 마크업만 활용해주세요. 
+        spinner.onclick = function(){
+            this.style.display = "none";
+        }
+    </script>
+    <pre>
+    <code class="html">
+        &lt;div class="loading_spinner"&gt;
+            &lt;img src="/images/common/loading.gif" alt="대기" /&gt;
+        &lt;/div&gt;
+    </code>  
+    </pre>  
+</article>
+<article>
+    <h2 class="s_tit">alert</h2>
+    <button type="button" id="btnAlert" class="out_field_btn">알럿확인</button>
+    <script type="text/javascript">
+    var alertBtn = document.getElementById('btnAlert');
+    alertBtn.onclick = function(){
+        var _msg = "hello! {0}님, prompt 형태도 있었던 것 같은데 <br /> <input type='text' style='width:100%; margin-top:20px' />"         
+        N(window).alert({
+            msg : _msg,
+            vars : ["홍길동", "2018-09-21"],
+            html : true,
+        }).show();
+    }
+    </script>
+</article>        
+</body>
+</html>

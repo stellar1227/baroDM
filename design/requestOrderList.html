@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>신청중인 주문 | 바로 DM</title>
+</head>
+<body>
+    <div class="sub_visual" data-category="my">
+        ORDERING DELEVERY
+    </div>
+    <section class="content">
+        <div class="info_title">
+            <h2 class="tit">신청중인 주문</h2>
+            <p class="desc">회원님이 신청중이신 주문 리스트 입니다.</p>
+        </div>
+        <div class="order_sec">
+            <ul class="noti_list">
+                <li class="star_noti">
+                    신청 중인 주문은 <em>저장 후 48시간이 지나면 삭제</em>됩니다. 
+                </li>
+                <li class="star_noti">
+                    <span>신청 중인 주문 중 원하시는 주문을 선택하시고 결제를 진행</span>해주세요. 
+                </li>
+            </ul>
+            <div class="list_table">
+                <table id="savedAddressList">
+                    <caption>신청중인 주문</caption>
+                    <colgroup>
+                        <col style="width:7.5%" />
+                        <col style="width:14.6%;" />
+                        <col style="width:19%" />
+                        <col style="width:16%" />
+                        <col style="width:auto" />
+                        <col style="width:10%" />
+                        <col style="width:14.6%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">선택</th>
+                            <th scope="col">주문 저장 날짜</th>
+                            <th scope="col">DM 구분</th>
+                            <th scope="col">발송수량</th>
+                            <th scope="col">전단지면 수</th>
+                            <th scope="col">사이즈</th>
+                            <th scope="col">결제금액</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="input_set" data-type="checkbox">     
+                                    <input type="checkbox" id=""  />
+                                    <label for=""></label>   
+                                </div>
+                            </td>
+                            <td id="date">
+                            </td>
+                            <td id="dm_type">
+                            </td>
+                            <td>
+                                <span id="quantity"></span>건
+                            </td>
+                            <td>
+                                <span id="page"></span>면
+                            </td>
+                            <td id="size">
+                            </td>
+                            <td>
+                                <span data-color="price">
+                                    <span id="price"></span>원
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn_list" data-align="center">
+                <button type="button" class="out_field_btn">선택한 내역 결제</button>
+            </div>
+        </div>
+    </section>
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <script>
+        var data = [{
+            "date" : "2018-01-11",
+            "dm_type" : "일반 DM",
+            "quantity" : "1500",
+            "page" : "3",
+            "size" : "A4",
+            "price" : "190,000"
+        },{
+            "date" : "2018-01-11",
+            "dm_type" : "맞춤홍보 DM",
+            "quantity" : "1500",
+            "page" : "3",
+            "size" : "A4",
+            "price" : "190,000"
+        },{
+            "date" : "2018-01-11",
+            "dm_type" : "일반 DM",
+            "quantity" : "1500",
+            "page" : "3",
+            "size" : "A4",
+            "price" : "190,000"
+        },{
+            "date" : "2018-01-11",
+            "dm_type" : "맞춤홍보 DM",
+            "quantity" : "1500",
+            "page" : "3",
+            "size" : "A4",
+            "price" : "190,000"
+        }]
+    
+        
+    var address = N(data).grid({
+            context : "#savedAddressList",
+            rowHandler : function(idx,el,data){
+                var id = 'choice' + idx;
+                el.find(".input_set")
+                .find("label").attr("for", id)
+                .siblings("input").attr("id", id)
+    
+            }
+        
+        }).bind();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>비밀번호 찾기 | 바로 DM</title>
+</head>
+<body>
+    <div class="sub_visual" data-category="login">
+        LOGIN
+    </div>
+    <section class="content">
+        <div class="info_title">
+            <h2 class="tit">비밀번호 찾기</h2>
+            <p class="desc">회원가입 시 등록하신 핸드폰을 통한 인증 후 임시비밀번호를 발급 받으세요.
+            </p>
+        </div>
+        <div class="login_sec">
+            <div class="myinfo_find_box">
+                <div class="info_input">
+                    <div>
+                        <label for="username">고객명</label>
+                        <input type="text" id="username" />
+                    </div>
+                    <div>
+                        <label for="user_phone">핸드폰 번호</label>
+                        <input type="number" id="user_phone" placeholder="'-' 제외하고 숫자만 입력" />
+                    </div>
+                </div>
+                <div class="btn_list" data-align="center">
+                    <button type="button" class="field_btn">인증번호 발송 </button>
+                    <button type="button" class="field_btn" data-color="light_gray">다시받기</button>
+                </div>
+                <div class="certify_number">
+                    <label for="certi_num">인증번호 입력</label>
+                    <input type="number" id="certi_num" />
+                </div>
+                <ul class="noti_list">
+                    <li class="star_noti">3분 이내에 인증번호를 입력하셔야 합니다. </li>
+                    <li class="star_noti">입력시간 초과시 인증번호를 다시 받아 주시기 바랍니다. </li>
+                </ul>
+                <div class="btn_list" data-align="center">
+                    <button type="button" class="out_field_btn">확인</button>
+                </div>
+            </div>
+            <div class="find_info_link">
+                <p>
+                    <strong>아이디/비밀번호를 잊으셨나요?</strong>
+                    <a href="#" class="field_btn" data-color="gray">아이디 찾기</a>
+                </p>
+                <p>
+                    <strong>아직 바로DM 온라인 회원이 아니신가요?</strong>
+                    <a href="#" class="field_btn" data-color="gray">회원가입</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+</body>
+</html>

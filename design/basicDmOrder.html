@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>일반DM 주문하기 | 바로 DM</title>
+</head>
+<body>
+    <div id="skipnavi">
+        <a href="#content">본문 바로가기</a>
+    </div>
+
+    <header id="header"><!-- header -->
+        <div class="inner_header">
+            <h1 class="logo"><a href="#">바로DM</a></h1>
+            <div class="util_menu">
+                <!-- 로그인 전-->
+                <a href="#" class="odd">로그인</a>
+                <a href="#">회원가입</a>
+                <!-- 로그인 전-->
+                <!-- 로그인 후-->
+                <a href="#" class="odd"><span>홍길동</span> 님</a>
+                <a href="#">로그아웃</a>
+                <!-- 로그인 후-->
+            </div>
+        </div>
+        <nav id="gnb">
+            <ul class="gnb">
+                <li class="on"><!-- 해당되는 메뉴에 class="on" 하고 렌더링 -->
+                    <a href="#">맞춤홍보 DM</a>
+                    <ul class="menu">
+                        <li class="on"><a href="#">맞춤홍보 DM 주문하기</a></li><!-- 해당되는 메뉴에 class="on" 하고 렌더링 -->
+                        <li><a href="#">맞춤홍보 DM 란?</a></li>
+                        <li><a href="#">맞춤홍보 DM 주문방법</a></li>
+                        <li><a href="#">요금계산기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">일반 DM</a>
+                    <ul class="menu">
+                        <li><a href="#">일반 DM 주문하기</a></li>
+                        <li><a href="#">일반 DM 란?</a></li>
+                        <li><a href="#">일반 DM 주문방법</a></li>
+                        <li><a href="#">요금계산기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">디자인템플릿</a>
+                    <ul class="menu">
+                        <li><a href="#">전단지 디자인</a></li>
+                        <li><a href="#">봉투 디자인</a></li>
+                        <li><a href="#">디자인템플릿 활용</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">서비스안내</a>
+                    <ul class="menu">
+                        <li><a href="#">바로 DM 서비스 종류</a></li>
+                        <li><a href="#">맞춤 DM 토탈 서비스</a></li>
+                        <li><a href="#">오프라인 주문 방법</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                    <ul class="menu">
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">1:1문의</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">이용안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">회사소개</a>
+                    <ul class="menu">
+                        <li><a href="#">빌포스트소개</a></li>
+                        <li><a href="#">주요 업무</a></li>
+                        <li><a href="#">통합마케팅 서비스</a></li>
+                        <li><a href="#">보유장비</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">My 바로DM</a>
+                    <ul class="menu">
+                        <li><a href="#">주문/발송 현황</a></li>
+                        <li><a href="#">저장된 주소록</a></li>
+                        <li><a href="#">신청 중인 주문</a></li>
+                        <li><a href="#">내정보</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav_bg"></div>
+        </nav>
+    </header><!-- //header -->
+
+    <!--  sub layout -->
+    <div class="sub_visual" data-category="basic_dm">
+        GENERAL DM
+    </div>
+    <section class="content" data-type="order_sec"><!-- 주문하기 step있는 경우만 data-type="order_sec" -->
+        <div class="info_title">
+            <h2 class="tit">일반DM 주문하기</h2>
+        </div>
+        <div class="order_step_sec" id="orderMenu">
+            <ul>
+                <li><a href="#step1">디자인 / 제작물 기본 정보</a></li>
+                <li><a href="#step2">주소록 업로드</a></li>
+                <li><a href="#step3">발신자 정보</a></li>
+                <li><a href="#step4">봉투 표기 내용</a></li>
+                <li id="saveNpurchase"><a href="#">저장 및 결제</a></li>
+            </ul>
+        </div>
+        <div class="order_input_sec"><!-- step 1부터 4 입력 폼-->
+            <div class="i_cont" id="step1">
+                <h3 class="title_text" data-level="2">
+                    01. 디자인 / 제작물 정보 입력
+                </h3>
+                <div class="tab order_tab" id="orderTab">
+                    <ul>
+                        <li><a href="#customDesign">디자인 템플릿 / 편집의뢰</a></li>
+                        <li><a href="#fileDesign">디자인 파일 등록</a></li>
+                    </ul>
+                    <div class="d_cont" id="customDesign">
+                        <div class="find_design">
+                            <input type="text" readonly placeholder="디자인 템플릿을 선택해 주세요">
+                            <button type="
+                            button" class="field_btn" id="btnFindDesign">디자인 템플릿 찾기</button>
+                        </div>                        
+                        <div class="design_question">
+                            <p class="que">디자인신청비용</p>
+                        </div>
+                        <div class="imgPreview">
+                            <div class="preview_box">
+                                <span class="thumbnail">                      
+                                    <img src="/images/temp/tmp_design3.jpg" alt=""> <!-- 215 * 300 처음 이미지 src가지고 렌더링 -->
+                                    <button type="button" class="btn_img_more">크게보기</button>
+                                </span>
+                            </div>
+                            <div class="img_viewer">
+                                <img src="" alt="">
+                                <button class="btn_closing">닫기</button>
+                            </div><!--  이미지 크게보기 -->
+                        </div>
+                        <div class="data_table">
+                            <table>
+                                <caption>디자인 설정</caption>
+                                <colgroup>
+                                    <col style="width:170px">
+                                    <col style="width:auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">디자인 편집 선택</th>
+                                        <td>
+                                            <select name="" id="" data-width="w280px">
+                                                <option value="">선택</option>
+                                            </select>
+                                            <button type="button" class="field_btn" id="btnEditSubmit">수정내용등록</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">사이즈 선택</th>
+                                        <td>
+                                            <select name="" id="" data-width="w280px">
+                                                <option value="">전단지 사이즈 선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">내지 매수</th>
+                                        <td>
+                                            <select name="" id="" data-width="w280px">
+                                                <option value="">내지 수량 선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">컬러/흑백</th>
+                                        <td>
+                                            <select name="" id="" data-width="w280px">
+                                                <option value="">색상 선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">로고 파일 업로드</th>
+                                        <td>
+                                            <div class="input_file_set">
+                                                <input type="text" readonly="">
+                                                <input type="file" id="file_add">
+                                                <label for="file_add">파일첨부하기</label>
+                                            </div>
+                                            <span class="star_noti">로고파일이 있을 시에만 업로드해주세요.</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="d_cont" id="fileDesign">
+                        <div class="find_design">
+                            <div class="input_file_set">
+                                <input type="text" readonly="">
+                                <input type="file" id="file_add2">
+                                <label for="file_add2">파일첨부하기</label>
+                            </div>
+                            <span class="star_noti">확장자 <span>pdf,psd,ai</span>만 가능합니다.</span>
+                        </div>                        
+                        <div class="design_question">
+                            <p class="que">디자인신청비용</p>
+                        </div>
+                        <div class="imgPreview">
+                            <div class="preview_box">
+                                <span class="thumbnail">                      
+                                    <img src="/images/temp/tmp_design3.jpg" alt=""> <!-- 215 * 300 처음 이미지 src가지고 렌더링 -->
+                                    <button type="button" class="btn_img_more">크게보기</button>
+                                </span>
+                            </div>
+                            <div class="img_viewer">
+                                <img src="" alt="">
+                                <button class="btn_closing">닫기</button>
+                            </div><!--  이미지 크게보기 -->
+                        </div>
+                        <div class="data_table">
+                            <table>
+                                <caption>디자인 설정</caption>
+                                <colgroup>
+                                    <col style="width:170px">
+                                    <col style="width:auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">디자인 파일업로드</th>
+                                        <td>
+                                            <button type="button" class="field_btn" id="btnFileUp">디자인 파일 업로드</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">사이즈 선택</th>
+                                        <td>
+                                            <select name="" id="" data-width="w280px">
+                                                <option value="">전단지 사이즈 선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">내지 매수</th>
+                                        <td>
+                                            <select name="" id="" data-width="w280px">
+                                                <option value="">내지 수량 선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">컬러/흑백</th>
+                                        <td>
+                                            <select name="" id="" data-width="w280px">
+                                                <option value="">색상 선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">로고 파일 업로드</th>
+                                        <td>
+                                            <div class="input_file_set">
+                                                <input type="text" readonly="">
+                                                <input type="file" id="file_add3">
+                                                <label for="file_add3">파일첨부하기</label>
+                                            </div>
+                                            <span class="star_noti">로고파일이 있을 시에만 업로드해주세요.</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="i_cont" id="step2">
+                <h3 class="title_text" data-level="2">02. 주소록 업로드</h3>
+                <ol class="s_list">
+                    <li>주소록 샘플 다운받기<br /><a href="#">다운로드 받기</a></li>
+                    <li>샘플파일에<br>주소 입력하기</li>
+                    <li>주소 입력한 <br>샘플파일 업로드 하기</li>
+                    <li>수정 시에는 <span>동일 파일명</span>으로 <br> <span>내용 수정하여 재 업로드</span></li>
+                </ol>
+                <ul class="noti_list">
+                    <li class="star_noti" data-color="important">주소록은 샘플 파일 형식으로 작성된 엑셀 파일로 업로드 해야 합니다.</li>
+                    <li class="star_noti" data-color="important">다운로드하신 샘플 파일의 파일명을 수정하지 마시고 내용만 기재하여 그대로 업데이트해주세요.</li>
+                </ul>
+                <div class="data_table">
+                    <table>
+                        <caption>주소록 파일 업로드</caption>
+                        <colgroup>
+                            <col style="width:210px">
+                            <col style="width:auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">파일불러오기</th>
+                                <td>
+                                    <div class="input_file_set">
+                                        <input type="text" readonly="">
+                                        <input type="file" id="file_add4">
+                                        <label for="file_add4">파일첨부하기</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">주소목록 수</th>
+                                <td>
+                                    <input type="number" readonly>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table_notice">
+                        업로드한 주소록의 발송 대상 수와 입력하신 발송수량이 일치하지 않습니다.  발송수량을 수정하시거나 파일의 주소 목록을 확인하신 후 재업로드 해주세요
+                </p>
+            </div>
+            <div class="i_cont" id="step3">
+                <h3 class="title_text" data-level="2">03. 발신자 정보(주문자 정보)</h3>
+                <div class="data_table">
+                    <table>
+                        <caption>발신자 정보 입력</caption>
+                        <colgroup>
+                            <col style="width:210px">
+                            <col style="width:380px">
+                            <col style="width:210px">
+                            <col style="width:auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">주문자이름</th>
+                                <td><input type="text" data-width="w100per"></td>
+                                <th scope="row">상호(발신자)</th>
+                                <td><input type="text" data-width="w100per" placeholder="15자 이내 (띄어쓰기 포함)"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">주소</th>
+                                <td colspan="3">
+                                    <div class="address_set">
+                                        <input type="number" title="우편번호" readonly="" class="post">
+                                        <button type="button" class="field_btn btn_post" data-color="gray">주소찾기</button>
+                                        <input type="text" title="주소" class="address" readonly="">
+                                        <input type="text" class="detail_address" title="상세주소">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연락처</th>
+                                <td colspan="3">
+                                    <input type="number" placeholder="'-'를 제외하고 숫자만 입력하세요." data-width="w350px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이메일</th>
+                                <td colspan="3"><input type="email" data-width="w350px"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="i_cont" id="step4">
+                <h3 class="title_text" data-level="2">04. 봉투 표기 내용</h3>
+                <div class="data_table">
+                    <table>
+                        <caption>봉투 표기내용 입력</caption>
+                        <colgroup>
+                            <col style="width:210px;">
+                            <col style="width:auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">발송인 내용</th>
+                                <td>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="send1"  />
+                                        <label for="send1">
+                                            <span class="text">상호</span>
+                                        </label>
+                                    </div>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="send2"  />
+                                        <label for="send2">
+                                            <span class="text">이름</span>
+                                        </label>
+                                    </div>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="send3"  />
+                                        <label for="send3">
+                                            <span class="text">주소</span>
+                                        </label>
+                                    </div>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="send4"  />
+                                        <label for="send4">
+                                            <span class="text">일반전화</span>
+                                        </label>
+                                    </div>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="send5"  />
+                                        <label for="send5">
+                                            <span class="text">휴대전화</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수신인 표기</th>
+                                <td>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="recieve1"  />
+                                        <label for="recieve1">
+                                            <span class="text">세대주님</span>
+                                        </label>
+                                    </div>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="recieve2"  />
+                                        <label for="recieve2">
+                                            <span class="text">고객님</span>
+                                        </label>
+                                    </div>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="recieve3"  />
+                                        <label for="recieve3">
+                                            <span class="text">사장님</span>
+                                        </label>
+                                    </div>
+                                    <div class="input_set" data-type="checkbox">
+                                        <input type="checkbox" id="recieve4"  />
+                                        <label for="recieve4">
+                                            <span class="text">대표님</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="btn_list" data-align="center">
+                <button type="submit" class="out_field_btn" id="orderPush">입력완료</button>
+            </div>
+        </div><!-- //step 1부터 4 입력 폼-->
+    </section>
+    <!-- sub layout -->
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <script src="/js/dmOrder.ui.js"></script>
+    <script>
+
+        $(window).load(function(){
+            N('#orderTab').tab(); 
+            $(".imgPreview").length && imgViewer.init(); 
+            $(".input_file_set").length && input_file_set.init();
+
+            $("#btnFileUp").on("click", function(){ //팝업 호출
+                N().popup({
+                    url : '/design/leafletFileUpload.html',
+                    title : '전단지 파일 올리기',
+                    message : {
+                        "ko_KR" : {
+                            "confirm" : "저장"
+                        }
+                    },
+                    "confirm" : false
+                }).open();
+            })
+
+            $("#btnFindDesign").on("click", function(){ //팝업 호출
+                N().popup({
+                    url : '/design/findDesignTemplate.html',
+                    title : '디자인 템플릿 선택하기',
+                    button : false
+                }).open();
+            })
+
+            //부르기 전에 N라이브러리관련 메소드 먼저 호출해야함 ㅜ
+            dmFlow.isValid = [true, false, true, false] // 초기 상태값
+            setTimeout(function(){                
+                dmFlow.init ();
+            },200)
+
+            //밸리데이션 체크 후 dmFlow.isValid 형태로 업데이트 해주세요 'ㅅ'...
+            dmFlow.isValid = [true, true, true, true]
+        })
+        
+    </script>
+</body>    
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">
+    <title>회원가입 | 바로 DM</title>
+</head>
+<body>
+    <div class="sub_visual" data-category="join">
+        JOIN
+    </div>
+    <section class="content">
+        <div class="info_title">
+            <h2 class="tit">회원가입</h2>
+            <p class="desc">바로DM에 오신 것을 환영합니다.회원가입 후 바로DM의 서비스를 더욱 편리하게 이용하세요. 
+            </p>
+        </div>
+        <div class="join_sec">
+            <ol class="join_step">
+                <li class="on">Step 1 본인인증</li>
+                <li>Step 2 약관동의</li>
+                <li>Step 3 정보입력</li>
+                <li>Step 4 가입완료</li>
+            </ol>
+            <div id="certifyTab" class="tab join_certify_sec">
+                <ul>
+                    <li><a href="#indiTab">개인회원</a></li>
+                    <li><a href="#enterTab">기업회원</a></li>
+                </ul>        
+                <div id="indiTab"><!-- 개인 -->
+                    <div class="info_input">
+                        <div>
+                            <label for="username">이름(본인)</label>
+                            <input type="text" id="username" />
+                        </div>
+                        <div>
+                            <label for="user_phone">핸드폰 인증</label>
+                            <input type="number" id="user_phone" placeholder="'-' 제외하고 숫자만 입력" />
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="field_btn">인증번호 발송</button>
+                        <button type="button" class="field_btn" data-color="light_gray">다시받기</button>
+                    </div>
+                    <div class="certify_number">
+                        <label for="certi_num">인증번호 입력</label>
+                        <input type="number" id="certi_num" />
+                    </div>
+                    <ul class="noti_list">
+                        <li class="star_noti">3분 이내에 인증번호를 입력하셔야 합니다. </li>
+                        <li class="star_noti">입력시간 초과시 인증번호를 다시 받아 주시기 바랍니다. </li>
+                    </ul>
+                    <div class="btn_list" data-align="center">
+                        <button type="button" class="out_field_btn">확인</button>
+                    </div>
+                </div><!-- // 개인 -->
+                <div id="enterTab"><!-- 기업 -->
+                    <div class="info_input">
+                        <div>
+                            <label for="company_name">기업명</label>
+                            <input type="text" id="company_name" />
+                        </div>
+                        <div>
+                            <label for="company_num">사업자 등록번호</label>
+                            <div class="tel_set"> 
+                                <input type="number" id="company_num" data-width="w120px" />
+                                <span class="bar">-</span>
+                                <input type="number" data-width="w120px" />
+                                <span class="bar">-</span>
+                                <input type="number" data-width="w120px" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="company_num">이메일 인증</label>
+                            <div class="email_set">    
+                                <input type="text" data-width="w120px" />
+                                <span class="bar">@</span>
+                                <input type="text" data-width="w120px" class="email_company" />
+                                <select id="emailCompany" name="" data-width="w120px">
+                                    <option value="">직접입력</option>
+                                    <option value="naver.com">naver</option>
+                                    <option value="daum.net">daum</option>
+                                    <option value="nate.com">nate</option>
+                                    <option value="gmail.com">gmail</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="warning">개인정보보호법에 따라 법인등록번호 이용 동의를 받습니다.
+                        </p>
+                    <div class="input_set" data-type="checkbox">  
+                        <input type="checkbox" id="c_agree" />
+                        <label for="c_agree">
+                            <span class="text">사업자 번호 처리에 동의합니다.</span>
+                        </label>   
+                    </div>
+                    <div class="btn_list" data-align="center"><!-- 인증 전 버튼 -->
+                        <button type="button" class="out_field_btn">인증하기</button>
+                    </div><!-- // 인증 전 버튼 -->
+                    
+                    <div class="mail_certy_info"><!-- 인증하기 누른 후 노출 -->
+                        <ul class="noti_list">
+                            <li class="star_noti" >입력하신 이메일로 발송된 인증 <em>메일의 인증링크를 30분 이내에 클릭</em>해 인증을 마쳐주세요.</li>
+                            <li class="star_noti">
+                                회원 정보 입력은 <em>인증 메일을 통한 인증 후에 가능</em>합니다. 
+                            </li>
+                        </ul>
+                        <p class="c_noti">
+                            입력하신 법인명/사업자등록번호는 인증을 위해 신용평가기관에 제공되며, 본인확인 용도 외에 사용되거나 저장되지 않습니다.
+                        </p>
+                    </div><!-- 인증하기 누른 후 노출 -->
+                </div><!-- // 기업 -->
+            </div>
+        </div>
+    </section>
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <script>
+        $(function(){            
+            N("#certifyTab").tab();
+            $(".email_set").length && email_set.init();
+        })
+    </script> 
+</html>

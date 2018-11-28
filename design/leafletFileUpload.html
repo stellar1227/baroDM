@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">    
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <title>전단지 내용 파일 업로드 | 바로 DM</title>
+</head>
+<body>
+    <!-- 이 컨테이너 이하로 parsing  됩니다 popup page 작성시 필수 natural.js ui쪽에 수정되어있음-->
+    <div class="popup_layout">
+        <div class="inner_popup">            
+            <div class="upload_sec">
+                <ul class="noti_list">
+                    <li class="dot_noti">디자인 제작 파일과 설명 파일을 함께 업로드 할 시에는 압축파일로 묶어 하나로 업로드해주세요. </li>
+                    <li class="dot_noti">수정 요청 시에는 전단지에 적용할 내용을 디자인 파일 또는 텍스트 문서로 정리하여 업로드해주세요. </li>
+                    <li class="dot_noti">특이사항을 함께 기재해주시면 편집 시에 참고하겠습니다. </li>
+                </ul>
+                <div class="up">
+                    <strong>전단지 내용 파일 업로드</strong>
+                    <div class="con">
+                        <div class="input_file_set">
+                            <input type="text" readonly="">
+                            <input type="file" id="file_add_leaflet">
+                            <label for="file_add_leaflet">파일첨부하기</label>
+                        </div>
+                        <ul class="noti_list">
+                            <li class="star_noti">확장자 <span>pdf,ai,psd</span>등 디자인 파일 업로드</li>
+                            <li class="star_noti">파일이<span>2개 이상이면 압축파일 1개로</span> 만들어 업로드</li>
+                            <li class="star_noti">업로드 가능 최대 용량 : <span>500M</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="data_table">
+                    <table>
+                        <caption>전단지명, 특이사항 입력</caption>
+                        <colgroup>
+                            <col style="width:160px" />
+                            <col style="width:auto" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">전단지명</th>
+                                <td>
+                                    <input type="text" placeholder="25자이내, 예-구의안경점 오픈 홍보 1차" data-width="w280px" />
+                                    <span class="star_noti">제작물 구분용 타이틀입니다.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">특이사항</th>
+                                <td>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="300자 이내"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){           
+            $(".input_file_set").length && input_file_set.init();
+        })
+    </script>
+</body>
+</html>

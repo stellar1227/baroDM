@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">    
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <title>1:1문의 작성 | 바로 DM</title>
+</head>
+<body>
+    <!-- 이 컨테이너 이하로 parsing  됩니다 popup page 작성시 필수 natural.js ui쪽에 수정되어있음-->
+    <div class="popup_layout">
+        <div class="inner_popup">            
+            <div class="data_table">
+                <table>
+                    <caption>문의하기</caption>
+                    <colgroup>
+                        <col style="width:170px" />
+                        <col style="width:auto" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">문의유형</th>
+                            <td>
+                                <div class="radio_form">
+                                    <div class="input_set" data-type="radio">
+                                        <input type="radio" id="customDM" name="dm_type" checked />
+                                        <label for="customDM">
+                                            <span class="text">맞춤홍보 DM</span>
+                                        </label>   
+                                    </div>
+                                    <div class="input_set" data-type="radio">
+                                        <input type="radio" id="basicDM" name="dm_type" />
+                                        <label for="basicDM">
+                                            <span class="text">일반 DM</span>
+                                        </label>   
+                                    </div>
+                                    <div class="input_set" data-type="radio">
+                                        <input type="radio" id="etcDM" name="dm_type" />
+                                        <label for="etcDM">
+                                            <span class="text">기타</span>
+                                        </label>   
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">작성자</th>
+                            <td>
+                                <span class="data">홍길동</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">연락처</th>
+                            <td>
+                                <input type="tell" data-width="w120px" />
+                                <input type="tell" data-width="w120px" />
+                                <input type="tell" data-width="w120px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이메일</th>
+                            <td>
+                                <div class="email_set" data-type="pop">                          
+                                    <input type="text" data-width="w120px" />
+                                    <span class="bar">@</span>
+                                    <input type="text" data-width="w120px" class="email_company" />
+                                    <select id="emailCompany" name="" data-width="w160px">
+                                        <option value="">직접입력</option>
+                                        <option value="naver.com">naver</option>
+                                        <option value="daum.net">daum</option>
+                                        <option value="nate.com">nate</option>
+                                        <option value="gmail.com">gmail</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">제목</th>
+                            <td>
+                                <input type="text" data-width="w100per" placeholder="25자 이내" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">내용</th>
+                            <td>
+                                <textarea name="" id="" cols="30" rows="10" placeholder="500자 이내 작성"></textarea><!-- 에디터로 사용시 높이값 160px 입니다. -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">첨부</th>
+                            <td>
+                                <div class="input_file_set">
+                                    <input type="text" readonly />
+                                    <input type="file" id="file_add" />
+                                    <label for="file_add">파일첨부하기</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><!-- 2018-09-03 추가 요청사항 반영 -->
+                            <td colspan="2">
+                                <ul class="file_list_box">
+                                    <li><!-- loop-->
+                                        <div class="name">디자인시안.jpg</div>
+                                        <div class="status">
+                                            <span class="per">5 %</span>
+                                            <span class="progress">
+                                                <span style="width:5%"></span><!--width값에 할당-->
+                                            </span>
+                                            <span class="byte">897kb</span>
+                                        </div>
+                                    </li><!--// loop-->
+                                    <li>
+                                        <div class="name">디디자인시안디자인시안디자인시안디자인시안디자인시안자인시안.jpg</div>
+                                        <div class="status">
+                                            <span class="per">45 %</span>
+                                            <span class="progress">
+                                                <span style="width:45%"></span>
+                                            </span>
+                                            <span class="byte">1110kb</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="name">디자인시안.jpg</div>
+                                        <div class="status">
+                                            <span class="per">100 %</span>
+                                            <span class="progress">
+                                                <span style="width:100%"></span>
+                                            </span>
+                                            <span class="byte">16kb</span>
+                                        </div>                           
+                                        <button type="button" class="btn_file_del">삭제</button>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr><!-- //2018-09-03 추가 요청사항 반영 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="fileDim" class="fileDim" style="display:none"><!-- file dim 2018-09-03 추가 요청사항 반영-->
+            <div class="drop_info">
+                <strong>File Upload</strong>
+                <p>파일을 여기에 끌어다 놓으면 파일 올리기가 바로 시작됩니다. </p>
+            </div>
+        </div><!-- //file dim 2018-09-03 추가 요청사항 반영 -->
+    </div>
+    <script>
+        $(function(){
+            $(".input_file_set").length && input_file_set.init();
+            $(".email_set").length && email_set.init();
+        })
+    </script>    
+</body>
+</html>

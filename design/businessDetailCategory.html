@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/natural.ui.css">
+    <link rel="stylesheet" href="/css/barodm.css">    
+    <script src="/js/libs/jquery-1.12.4.min.js"></script>
+    <script src="/js/libs/natural.js.min.js"></script>
+    <script src="/js/libs/natural.config.js"></script>
+    <script src="/js/barodm.ui.js"></script>
+    <title>업종 상세분류 | 바로 DM</title>
+</head>
+<body>
+    <div class="popup_layout">
+        <div class="inner_popup" data-width="w740px">
+            <div class="busi_cate_sec">
+                <div class="depth">
+                    <div class="depth_box">
+                        <strong class="title_text" data-level="3">대분류선택</strong>
+                        <div class="result_box" data-height="w100px">
+                            <ul>
+                                <li><a href="#">1차산업</a></li>
+                                <li><a href="#">소매</a></li>
+                                <li><a href="#">생활서비스</a></li>
+                                <li><a href="#">부동산</a></li>
+                                <li><a href="#">관광/여가/오락</a></li>
+                                <li><a href="#">숙박</a></li>
+                                <li><a href="#">스포츠</a></li>
+                                <li><a href="#">음식</a></li>
+                                <li><a href="#">학문/교육</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="depth_box">
+                        <strong class="title_text" data-level="3">(1차산업) 중분류 선택</strong>
+                        <div class="result_box">
+                            <ul>
+                                <li><a href="#">농업/축산</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="depth_box">
+                        <strong class="title_text" data-level="3">소분류 선택</strong>
+                        <div class="result_box">
+                            <ul>
+                                <li><a href="#">육우사육</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="selection" data-align="right">
+                    <strong class="title_text" data-level="2">선택업종</strong>
+                    <button type="button" class="mini_field_btn">선택삭제</button>
+                    <div class="result_box" data-height="w628px">
+                        <ul>
+                            <li>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="i2d1234"   /><!-- id와 label for 연결-->
+                                    <label for="i2d1234">
+                                        <span class="text">소매 (340)</span>
+                                    </label>   
+                                </div>
+                                <button type="button" class="btn_del_list">삭제</button>
+                            </li>
+                            <li>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="i2d1235"   /><!-- id와 label for 연결-->
+                                    <label for="i2d1235">
+                                        <span class="text">부동산 &gt; 부동산중개 (40)</span>
+                                    </label>   
+                                </div>
+                                <button type="button" class="btn_del_list">삭제</button>
+                            </li>
+                            <li>
+                                <div class="input_set" data-type="checkbox">    
+                                    <input type="checkbox" id="i2d1236"   /><!-- id와 label for 연결-->
+                                    <label for="i2d1236"><!-- 문자열 maxlength는요? ;ㅁ; -->
+                                        <span class="text">소매 &gt; 취미/오락관련소매 &gt; 우표/공중전화카드수집상 (40)</span>
+                                    </label>   
+                                </div>
+                                <button type="button" class="btn_del_list">삭제</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
